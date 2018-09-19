@@ -14,9 +14,10 @@ class SubscriptionTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
 
         detailView.roundCorners(radius: 10.0)
-        detailView.backgroundColor = .black
+        detailView.backgroundColor = .blacks
     }
 
 }

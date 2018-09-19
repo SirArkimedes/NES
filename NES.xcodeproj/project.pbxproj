@@ -69,16 +69,11 @@
 		495CA32F2151F17B0012C46B /* NES */ = {
 			isa = PBXGroup;
 			children = (
+				495CA353215201A00012C46B /* Extensions */,
 				495CA3422151F1FB0012C46B /* NES.entitlements */,
-				495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */,
-				495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */,
 				495CA3302151F17B0012C46B /* AppDelegate.swift */,
-				495CA3432151F4550012C46B /* SubscriptionListViewController.xib */,
-				495CA3452151F46F0012C46B /* SubscriptionListViewController.swift */,
-				495CA3472151F8CB0012C46B /* SubscriptionTableViewCell.xib */,
-				495CA3492151F8EA0012C46B /* SubscriptionTableViewCell.swift */,
-				495CA34F2151FC190012C46B /* AddSubListViewController.xib */,
-				495CA34D2151FC060012C46B /* AddSubListViewController.swift */,
+				495CA354215201AC0012C46B /* SubscriptionList */,
+				495CA355215201C10012C46B /* AddSubscription */,
 				495CA3342151F17B0012C46B /* Main.storyboard */,
 				495CA3372151F17C0012C46B /* Assets.xcassets */,
 				495CA3392151F17C0012C46B /* LaunchScreen.storyboard */,
@@ -86,6 +81,35 @@
 				495CA32E2151F17B0012C46B /* Products */,
 			);
 			path = NES;
+			sourceTree = "<group>";
+		};
+		495CA353215201A00012C46B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */,
+				495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		495CA354215201AC0012C46B /* SubscriptionList */ = {
+			isa = PBXGroup;
+			children = (
+				495CA3432151F4550012C46B /* SubscriptionListViewController.xib */,
+				495CA3452151F46F0012C46B /* SubscriptionListViewController.swift */,
+				495CA3472151F8CB0012C46B /* SubscriptionTableViewCell.xib */,
+				495CA3492151F8EA0012C46B /* SubscriptionTableViewCell.swift */,
+			);
+			path = SubscriptionList;
+			sourceTree = "<group>";
+		};
+		495CA355215201C10012C46B /* AddSubscription */ = {
+			isa = PBXGroup;
+			children = (
+				495CA34F2151FC190012C46B /* AddSubListViewController.xib */,
+				495CA34D2151FC060012C46B /* AddSubListViewController.swift */,
+			);
+			path = AddSubscription;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
