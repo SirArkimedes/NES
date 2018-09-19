@@ -16,6 +16,9 @@
 		495CA3482151F8CB0012C46B /* SubscriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3472151F8CB0012C46B /* SubscriptionTableViewCell.xib */; };
 		495CA34A2151F8EA0012C46B /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA3492151F8EA0012C46B /* SubscriptionTableViewCell.swift */; };
 		495CA34C2151FA1F0012C46B /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */; };
+		495CA34E2151FC060012C46B /* AddSubListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA34D2151FC060012C46B /* AddSubListViewController.swift */; };
+		495CA3502151FC190012C46B /* AddSubListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA34F2151FC190012C46B /* AddSubListViewController.xib */; };
+		495CA352215201360012C46B /* UIViewController+SafeAreaSpacers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		495CA3472151F8CB0012C46B /* SubscriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionTableViewCell.xib; sourceTree = "<group>"; };
 		495CA3492151F8EA0012C46B /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
 		495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
+		495CA34D2151FC060012C46B /* AddSubListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubListViewController.swift; sourceTree = "<group>"; };
+		495CA34F2151FC190012C46B /* AddSubListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSubListViewController.xib; sourceTree = "<group>"; };
+		495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeAreaSpacers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				495CA32F2151F17B0012C46B /* NES */,
-				495CA32E2151F17B0012C46B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +63,7 @@
 				495CA32D2151F17B0012C46B /* NES.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		495CA32F2151F17B0012C46B /* NES */ = {
@@ -65,15 +71,19 @@
 			children = (
 				495CA3422151F1FB0012C46B /* NES.entitlements */,
 				495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */,
+				495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */,
 				495CA3302151F17B0012C46B /* AppDelegate.swift */,
 				495CA3432151F4550012C46B /* SubscriptionListViewController.xib */,
 				495CA3452151F46F0012C46B /* SubscriptionListViewController.swift */,
 				495CA3472151F8CB0012C46B /* SubscriptionTableViewCell.xib */,
 				495CA3492151F8EA0012C46B /* SubscriptionTableViewCell.swift */,
+				495CA34F2151FC190012C46B /* AddSubListViewController.xib */,
+				495CA34D2151FC060012C46B /* AddSubListViewController.swift */,
 				495CA3342151F17B0012C46B /* Main.storyboard */,
 				495CA3372151F17C0012C46B /* Assets.xcassets */,
 				495CA3392151F17C0012C46B /* LaunchScreen.storyboard */,
 				495CA33C2151F17C0012C46B /* Info.plist */,
+				495CA32E2151F17B0012C46B /* Products */,
 			);
 			path = NES;
 			sourceTree = "<group>";
@@ -146,6 +156,7 @@
 				495CA3382151F17C0012C46B /* Assets.xcassets in Resources */,
 				495CA3362151F17B0012C46B /* Main.storyboard in Resources */,
 				495CA3442151F4550012C46B /* SubscriptionListViewController.xib in Resources */,
+				495CA3502151FC190012C46B /* AddSubListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495CA352215201360012C46B /* UIViewController+SafeAreaSpacers.swift in Sources */,
 				495CA34A2151F8EA0012C46B /* SubscriptionTableViewCell.swift in Sources */,
+				495CA34E2151FC060012C46B /* AddSubListViewController.swift in Sources */,
 				495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */,
 				495CA3462151F46F0012C46B /* SubscriptionListViewController.swift in Sources */,
 				495CA34C2151FA1F0012C46B /* UIView+RoundedCorners.swift in Sources */,

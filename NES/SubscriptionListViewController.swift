@@ -25,6 +25,7 @@ class SubscriptionListViewController: UIViewController {
     // MARK: - Actions
 
     @objc private func addButtonPressed() {
+        present(AddSubListViewController(), animated: true, completion: nil)
     }
 
 }
@@ -36,11 +37,6 @@ extension SubscriptionListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SubscriptionTableViewCell.self), for: indexPath)
-//        if indexPath.row % 2 == 0 {
-//            cell.backgroundColor = .yellow
-//        } else {
-//            cell.backgroundColor = .black
-//        }
         return cell
     }
 }
