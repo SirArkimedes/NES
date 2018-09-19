@@ -8,18 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA3302151F17B0012C46B /* AppDelegate.swift */; };
-		495CA3332151F17B0012C46B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA3322151F17B0012C46B /* ViewController.swift */; };
 		495CA3362151F17B0012C46B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3342151F17B0012C46B /* Main.storyboard */; };
 		495CA3382151F17C0012C46B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3372151F17C0012C46B /* Assets.xcassets */; };
 		495CA33B2151F17C0012C46B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3392151F17C0012C46B /* LaunchScreen.storyboard */; };
 		495CA3442151F4550012C46B /* SubscriptionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3432151F4550012C46B /* SubscriptionListViewController.xib */; };
 		495CA3462151F46F0012C46B /* SubscriptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA3452151F46F0012C46B /* SubscriptionListViewController.swift */; };
+		495CA3482151F8CB0012C46B /* SubscriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3472151F8CB0012C46B /* SubscriptionTableViewCell.xib */; };
+		495CA34A2151F8EA0012C46B /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA3492151F8EA0012C46B /* SubscriptionTableViewCell.swift */; };
+		495CA34C2151FA1F0012C46B /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		495CA32D2151F17B0012C46B /* NES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495CA3302151F17B0012C46B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		495CA3322151F17B0012C46B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		495CA3352151F17B0012C46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		495CA3372151F17C0012C46B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		495CA33A2151F17C0012C46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -27,6 +28,9 @@
 		495CA3422151F1FB0012C46B /* NES.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NES.entitlements; sourceTree = "<group>"; };
 		495CA3432151F4550012C46B /* SubscriptionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionListViewController.xib; sourceTree = "<group>"; };
 		495CA3452151F46F0012C46B /* SubscriptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionListViewController.swift; sourceTree = "<group>"; };
+		495CA3472151F8CB0012C46B /* SubscriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionTableViewCell.xib; sourceTree = "<group>"; };
+		495CA3492151F8EA0012C46B /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +64,12 @@
 			isa = PBXGroup;
 			children = (
 				495CA3422151F1FB0012C46B /* NES.entitlements */,
+				495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */,
 				495CA3302151F17B0012C46B /* AppDelegate.swift */,
 				495CA3432151F4550012C46B /* SubscriptionListViewController.xib */,
 				495CA3452151F46F0012C46B /* SubscriptionListViewController.swift */,
-				495CA3322151F17B0012C46B /* ViewController.swift */,
+				495CA3472151F8CB0012C46B /* SubscriptionTableViewCell.xib */,
+				495CA3492151F8EA0012C46B /* SubscriptionTableViewCell.swift */,
 				495CA3342151F17B0012C46B /* Main.storyboard */,
 				495CA3372151F17C0012C46B /* Assets.xcassets */,
 				495CA3392151F17C0012C46B /* LaunchScreen.storyboard */,
@@ -135,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495CA3482151F8CB0012C46B /* SubscriptionTableViewCell.xib in Resources */,
 				495CA33B2151F17C0012C46B /* LaunchScreen.storyboard in Resources */,
 				495CA3382151F17C0012C46B /* Assets.xcassets in Resources */,
 				495CA3362151F17B0012C46B /* Main.storyboard in Resources */,
@@ -149,9 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				495CA3332151F17B0012C46B /* ViewController.swift in Sources */,
+				495CA34A2151F8EA0012C46B /* SubscriptionTableViewCell.swift in Sources */,
 				495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */,
 				495CA3462151F46F0012C46B /* SubscriptionListViewController.swift in Sources */,
+				495CA34C2151FA1F0012C46B /* UIView+RoundedCorners.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

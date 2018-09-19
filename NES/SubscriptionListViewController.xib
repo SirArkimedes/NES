@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscriptionListViewController" customModule="NES" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="Pc3-EH-pVR" id="jC0-8I-SEU"/>
                 <outlet property="view" destination="iN0-l3-epB" id="65p-Ez-zCO"/>
             </connections>
         </placeholder>
@@ -19,8 +20,21 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pc3-EH-pVR">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pc3-EH-pVR" secondAttribute="trailing" id="6qJ-zJ-yO9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Pc3-EH-pVR" secondAttribute="top" constant="20" id="HdD-wd-mPO"/>
+                <constraint firstItem="Pc3-EH-pVR" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="20" id="eXw-vg-ibJ"/>
+                <constraint firstItem="Pc3-EH-pVR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ib0-jQ-rsP"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
 </document>
