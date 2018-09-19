@@ -22,6 +22,7 @@
 		495CA3372151F17C0012C46B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		495CA33A2151F17C0012C46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		495CA33C2151F17C0012C46B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		495CA3422151F1FB0012C46B /* NES.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NES.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		495CA32F2151F17B0012C46B /* NES */ = {
 			isa = PBXGroup;
 			children = (
+				495CA3422151F1FB0012C46B /* NES.entitlements */,
 				495CA3302151F17B0012C46B /* AppDelegate.swift */,
 				495CA3322151F17B0012C46B /* ViewController.swift */,
 				495CA3342151F17B0012C46B /* Main.storyboard */,
@@ -96,6 +98,11 @@
 				TargetAttributes = {
 					495CA32C2151F17B0012C46B = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -282,6 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NES/NES.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
@@ -289,7 +297,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.nes.NES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.nes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,6 +308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NES/NES.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
@@ -307,7 +316,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.nes.NES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.nes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
