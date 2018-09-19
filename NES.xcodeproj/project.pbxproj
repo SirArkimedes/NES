@@ -12,6 +12,8 @@
 		495CA3362151F17B0012C46B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3342151F17B0012C46B /* Main.storyboard */; };
 		495CA3382151F17C0012C46B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3372151F17C0012C46B /* Assets.xcassets */; };
 		495CA33B2151F17C0012C46B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3392151F17C0012C46B /* LaunchScreen.storyboard */; };
+		495CA3442151F4550012C46B /* SubscriptionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3432151F4550012C46B /* SubscriptionListViewController.xib */; };
+		495CA3462151F46F0012C46B /* SubscriptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA3452151F46F0012C46B /* SubscriptionListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		495CA33A2151F17C0012C46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		495CA33C2151F17C0012C46B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495CA3422151F1FB0012C46B /* NES.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NES.entitlements; sourceTree = "<group>"; };
+		495CA3432151F4550012C46B /* SubscriptionListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionListViewController.xib; sourceTree = "<group>"; };
+		495CA3452151F46F0012C46B /* SubscriptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			children = (
 				495CA3422151F1FB0012C46B /* NES.entitlements */,
 				495CA3302151F17B0012C46B /* AppDelegate.swift */,
+				495CA3432151F4550012C46B /* SubscriptionListViewController.xib */,
+				495CA3452151F46F0012C46B /* SubscriptionListViewController.swift */,
 				495CA3322151F17B0012C46B /* ViewController.swift */,
 				495CA3342151F17B0012C46B /* Main.storyboard */,
 				495CA3372151F17C0012C46B /* Assets.xcassets */,
@@ -132,6 +138,7 @@
 				495CA33B2151F17C0012C46B /* LaunchScreen.storyboard in Resources */,
 				495CA3382151F17C0012C46B /* Assets.xcassets in Resources */,
 				495CA3362151F17B0012C46B /* Main.storyboard in Resources */,
+				495CA3442151F4550012C46B /* SubscriptionListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +151,7 @@
 			files = (
 				495CA3332151F17B0012C46B /* ViewController.swift in Sources */,
 				495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */,
+				495CA3462151F46F0012C46B /* SubscriptionListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
