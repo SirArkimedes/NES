@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let vc = SubscriptionListViewController()
         let nvc = UINavigationController(rootViewController: vc)
-        vc.title = "Subscriptions"
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.rootViewController = nvc

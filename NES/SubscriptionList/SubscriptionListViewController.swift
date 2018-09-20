@@ -14,6 +14,8 @@ class SubscriptionListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Subscriptions"
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonPressed)), animated: false)
 
         tableView.dataSource = self
