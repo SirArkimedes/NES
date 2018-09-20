@@ -1,0 +1,26 @@
+PODS:
+  - IceCream (1.6.0):
+    - RealmSwift
+  - Realm (3.10.0):
+    - Realm/Headers (= 3.10.0)
+  - Realm/Headers (3.10.0)
+  - RealmSwift (3.10.0):
+    - Realm (= 3.10.0)
+
+DEPENDENCIES:
+  - IceCream (~> 1.6.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IceCream
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  IceCream: e1fc8ecfd19c7480018ead3c809d5f94f2291096
+  Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
+  RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
+
+PODFILE CHECKSUM: 17a73e7eabd0b68b93382a78c3743aad0b6ae564
+
+COCOAPODS: 1.5.3
