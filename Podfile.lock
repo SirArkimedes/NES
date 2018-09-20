@@ -6,14 +6,21 @@ PODS:
   - Realm/Headers (3.10.0)
   - RealmSwift (3.10.0):
     - Realm (= 3.10.0)
+  - RxRealm (0.7.5):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.3.0)
 
 DEPENDENCIES:
   - "IceCream (from `git@github.com:SirArkimedes/IceCream.git`)"
+  - RxRealm
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Realm
     - RealmSwift
+    - RxRealm
+    - RxSwift
 
 EXTERNAL SOURCES:
   IceCream:
@@ -28,7 +35,9 @@ SPEC CHECKSUMS:
   IceCream: e1fc8ecfd19c7480018ead3c809d5f94f2291096
   Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
   RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
+  RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
+  RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
 
-PODFILE CHECKSUM: e3d99804ff5fc1ab7fb6151e994869298761d98c
+PODFILE CHECKSUM: d2f236556509f138977b1ae585999e3c5f739492
 
 COCOAPODS: 1.5.3

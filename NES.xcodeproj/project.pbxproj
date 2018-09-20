@@ -23,6 +23,7 @@
 		495CA35A215333530012C46B /* NewSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA359215333530012C46B /* NewSubscriptionViewController.swift */; };
 		495CA35C215333690012C46B /* NewSubscriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA35B215333690012C46B /* NewSubscriptionViewController.xib */; };
 		495CA35E215336880012C46B /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA35D215336880012C46B /* SubscriptionManager.swift */; };
+		495CA362215354600012C46B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495CA361215354600012C46B /* CloudKit.framework */; };
 		ACB6D91E256B69E97C6A8C0C /* Pods_NES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D6EBEAC7EB7C2FF32068B7 /* Pods_NES.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		495CA359215333530012C46B /* NewSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubscriptionViewController.swift; sourceTree = "<group>"; };
 		495CA35B215333690012C46B /* NewSubscriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewSubscriptionViewController.xib; sourceTree = "<group>"; };
 		495CA35D215336880012C46B /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		495CA361215354600012C46B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB6D91E256B69E97C6A8C0C /* Pods_NES.framework in Frameworks */,
+				495CA362215354600012C46B /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +154,7 @@
 		8F6480B6646245663896DB2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				495CA361215354600012C46B /* CloudKit.framework */,
 				28D6EBEAC7EB7C2FF32068B7 /* Pods_NES.framework */,
 			);
 			name = Frameworks;
@@ -191,6 +195,9 @@
 					495CA32C2151F17B0012C46B = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -243,11 +250,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-NES/Pods-NES-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -439,10 +450,7 @@
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.nes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -460,10 +468,7 @@
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.nes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
