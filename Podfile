@@ -8,5 +8,6 @@ target 'NES' do
   # Pods for NES
   pod 'IceCream', :git => 'git@github.com:SirArkimedes/IceCream.git'
   pod 'RxRealm'
+  pod 'Pulley'
 
 end
