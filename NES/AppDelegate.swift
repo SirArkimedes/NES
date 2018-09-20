@@ -26,9 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = nvc
         self.window!.makeKeyAndVisible()
 
-        syncEngine = SyncEngine(objects: [
-            SyncObject<Subscription>()
-            ])
+        syncEngine = SyncEngine(objects: [SyncObject<Subscription>()])
         application.registerForRemoteNotifications()
 
         return true

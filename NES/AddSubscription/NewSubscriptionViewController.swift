@@ -41,7 +41,7 @@ class NewSubscriptionViewController: UIViewController {
     }
 
     @objc private func cancel() {
-        dismiss(animated: true, completion: nil)
+        presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
 }

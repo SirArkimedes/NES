@@ -23,7 +23,7 @@ class SubscriptionListViewController: UIViewController {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: String(describing: SubscriptionTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubscriptionTableViewCell.self))
 
-        SubscriptionManager.instance.bind { (subscriptions) in
+        SubscriptionManager.instance.bind {
             self.tableView.reloadData()
         }
     }

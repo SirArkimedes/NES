@@ -12,7 +12,7 @@ import RxRealm
 import RxSwift
 
 class SubscriptionManager {
-    typealias DidGetNewDataBlock = (_ subscriptions: [Subscription]) -> ()
+    typealias DidGetNewDataBlock = () -> ()
     static let instance = SubscriptionManager()
 
     private var subscriptions = [Subscription]()
@@ -36,14 +36,11 @@ class SubscriptionManager {
 
     func bind(with block: @escaping DidGetNewDataBlock) {
         let realm = try! Realm()
-
-        /// Results instances are live, auto-updating views into the underlying data, which means results never have to be re-fetched.
-        /// https://realm.io/docs/swift/latest/#objects-with-primary-keys
         let subscriptions = realm.objects(Subscription.self)
 
         Observable.array(from: subscriptions).subscribe(onNext: { (subscriptions) in
             self.subscriptions = subscriptions.filter{ !$0.isDeleted }
-            block(self.subscriptions)
+            block()
         }).disposed(by: bag)
     }
 }
