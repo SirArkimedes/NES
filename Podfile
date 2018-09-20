@@ -6,6 +6,6 @@ target 'NES' do
   use_frameworks!
 
   # Pods for NES
-  pod 'IceCream', '~> 1.6.0'
+  pod 'IceCream', :git => 'git@github.com:SirArkimedes/IceCream.git'
 
 end

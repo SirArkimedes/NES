@@ -7,7 +7,23 @@
 //
 
 import Foundation
+import RealmSwift
+import IceCream
 
-struct Subscription {
-    var name: String
+class Subscription: Object {
+    @objc dynamic var id = NSUUID().uuidString
+    @objc dynamic var name = ""
+
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+// MARK: - CloudKit to Realm Database
+extension Subscription: CKRecordConvertible {
+    var isDeleted: Bool {
+        return false
+    }
+}
+extension Subscription: CKRecordRecoverable {
 }

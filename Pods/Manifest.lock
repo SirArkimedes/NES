@@ -8,19 +8,27 @@ PODS:
     - Realm (= 3.10.0)
 
 DEPENDENCIES:
-  - IceCream (~> 1.6.0)
+  - "IceCream (from `git@github.com:SirArkimedes/IceCream.git`)"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - IceCream
     - Realm
     - RealmSwift
+
+EXTERNAL SOURCES:
+  IceCream:
+    :git: "git@github.com:SirArkimedes/IceCream.git"
+
+CHECKOUT OPTIONS:
+  IceCream:
+    :commit: 90d32252ab2b6a8f63c740ae7d39bba5a387fb33
+    :git: "git@github.com:SirArkimedes/IceCream.git"
 
 SPEC CHECKSUMS:
   IceCream: e1fc8ecfd19c7480018ead3c809d5f94f2291096
   Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
   RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
 
-PODFILE CHECKSUM: 17a73e7eabd0b68b93382a78c3743aad0b6ae564
+PODFILE CHECKSUM: e3d99804ff5fc1ab7fb6151e994869298761d98c
 
 COCOAPODS: 1.5.3

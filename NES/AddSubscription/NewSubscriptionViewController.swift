@@ -31,7 +31,9 @@ class NewSubscriptionViewController: UIViewController {
 
     @IBAction func createButtonPressed(_ sender: UIButton) {
         if let name = titleTextField.text {
-            let new = Subscription.init(name: name)
+            let new = Subscription()
+            new.name = name
+
             SubscriptionManager.instance.addSubscription(subscription: new)
             dismiss(animated: true, completion: nil)
         } else {
