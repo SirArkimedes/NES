@@ -22,6 +22,11 @@ class SubscriptionListViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: SubscriptionTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubscriptionTableViewCell.self))
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
     // MARK: - Actions
 
     @objc private func addButtonPressed() {
@@ -32,11 +37,15 @@ class SubscriptionListViewController: UIViewController {
 
 extension SubscriptionListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return SubscriptionManager.instance.getSubscriptionCount()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SubscriptionTableViewCell.self), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SubscriptionTableViewCell.self), for: indexPath) as! SubscriptionTableViewCell
+
+        let sub = SubscriptionManager.instance.getSubscriptionAt(index: indexPath.row)
+        cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name))
+
         return cell
     }
 }

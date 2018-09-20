@@ -12,12 +12,24 @@ class SubscriptionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var detailView: UIView!
 
+    @IBOutlet weak var titleLabel: UILabel!
+
+    struct ViewModel {
+        let title: String
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
 
         detailView.roundCorners(radius: 10.0)
-        detailView.backgroundColor = .blacks
+        detailView.backgroundColor = .black
+
+        titleLabel.textColor = .white
+    }
+
+    func configure(with viewModel: ViewModel) {
+        titleLabel.text = viewModel.title
     }
 
 }

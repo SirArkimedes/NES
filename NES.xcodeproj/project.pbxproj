@@ -19,6 +19,10 @@
 		495CA34E2151FC060012C46B /* AddSubListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA34D2151FC060012C46B /* AddSubListViewController.swift */; };
 		495CA3502151FC190012C46B /* AddSubListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA34F2151FC190012C46B /* AddSubListViewController.xib */; };
 		495CA352215201360012C46B /* UIViewController+SafeAreaSpacers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */; };
+		495CA3582153333A0012C46B /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA3572153333A0012C46B /* Subscription.swift */; };
+		495CA35A215333530012C46B /* NewSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA359215333530012C46B /* NewSubscriptionViewController.swift */; };
+		495CA35C215333690012C46B /* NewSubscriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA35B215333690012C46B /* NewSubscriptionViewController.xib */; };
+		495CA35E215336880012C46B /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA35D215336880012C46B /* SubscriptionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		495CA34D2151FC060012C46B /* AddSubListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubListViewController.swift; sourceTree = "<group>"; };
 		495CA34F2151FC190012C46B /* AddSubListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSubListViewController.xib; sourceTree = "<group>"; };
 		495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeAreaSpacers.swift"; sourceTree = "<group>"; };
+		495CA3572153333A0012C46B /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		495CA359215333530012C46B /* NewSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubscriptionViewController.swift; sourceTree = "<group>"; };
+		495CA35B215333690012C46B /* NewSubscriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewSubscriptionViewController.xib; sourceTree = "<group>"; };
+		495CA35D215336880012C46B /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +77,10 @@
 		495CA32F2151F17B0012C46B /* NES */ = {
 			isa = PBXGroup;
 			children = (
-				495CA353215201A00012C46B /* Extensions */,
 				495CA3422151F1FB0012C46B /* NES.entitlements */,
 				495CA3302151F17B0012C46B /* AppDelegate.swift */,
+				495CA353215201A00012C46B /* Extensions */,
+				495CA356215333240012C46B /* Models */,
 				495CA354215201AC0012C46B /* SubscriptionList */,
 				495CA355215201C10012C46B /* AddSubscription */,
 				495CA3342151F17B0012C46B /* Main.storyboard */,
@@ -108,8 +117,19 @@
 			children = (
 				495CA34F2151FC190012C46B /* AddSubListViewController.xib */,
 				495CA34D2151FC060012C46B /* AddSubListViewController.swift */,
+				495CA35B215333690012C46B /* NewSubscriptionViewController.xib */,
+				495CA359215333530012C46B /* NewSubscriptionViewController.swift */,
 			);
 			path = AddSubscription;
+			sourceTree = "<group>";
+		};
+		495CA356215333240012C46B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				495CA35D215336880012C46B /* SubscriptionManager.swift */,
+				495CA3572153333A0012C46B /* Subscription.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				495CA3482151F8CB0012C46B /* SubscriptionTableViewCell.xib in Resources */,
+				495CA35C215333690012C46B /* NewSubscriptionViewController.xib in Resources */,
 				495CA33B2151F17C0012C46B /* LaunchScreen.storyboard in Resources */,
 				495CA3382151F17C0012C46B /* Assets.xcassets in Resources */,
 				495CA3362151F17B0012C46B /* Main.storyboard in Resources */,
@@ -195,6 +216,9 @@
 				495CA34A2151F8EA0012C46B /* SubscriptionTableViewCell.swift in Sources */,
 				495CA34E2151FC060012C46B /* AddSubListViewController.swift in Sources */,
 				495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */,
+				495CA35A215333530012C46B /* NewSubscriptionViewController.swift in Sources */,
+				495CA35E215336880012C46B /* SubscriptionManager.swift in Sources */,
+				495CA3582153333A0012C46B /* Subscription.swift in Sources */,
 				495CA3462151F46F0012C46B /* SubscriptionListViewController.swift in Sources */,
 				495CA34C2151FA1F0012C46B /* UIView+RoundedCorners.swift in Sources */,
 			);
