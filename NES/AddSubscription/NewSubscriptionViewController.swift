@@ -35,7 +35,7 @@ class NewSubscriptionViewController: UIViewController {
             new.name = name
 
             SubscriptionManager.instance.addSubscription(subscription: new)
-            dismiss(animated: true, completion: nil)
+            cancel()
         } else {
         }
     }

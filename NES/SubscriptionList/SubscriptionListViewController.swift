@@ -17,6 +17,7 @@ class SubscriptionListViewController: UIViewController {
         title = "Subscriptions"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonPressed)), animated: false)
+        navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(settingsButtonPressed)), animated: false)
 
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -34,6 +35,10 @@ class SubscriptionListViewController: UIViewController {
     }
 
     // MARK: - Actions
+
+    @objc private func settingsButtonPressed() {
+        //
+    }
 
     @objc private func addButtonPressed() {
         present(AddSubListViewController(), animated: true, completion: nil)
