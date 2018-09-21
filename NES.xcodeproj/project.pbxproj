@@ -24,6 +24,7 @@
 		495CA35C215333690012C46B /* NewSubscriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA35B215333690012C46B /* NewSubscriptionViewController.xib */; };
 		495CA35E215336880012C46B /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA35D215336880012C46B /* SubscriptionManager.swift */; };
 		495CA362215354600012C46B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495CA361215354600012C46B /* CloudKit.framework */; };
+		495CA36621547AEA0012C46B /* UIColor+Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA36521547AEA0012C46B /* UIColor+Brightness.swift */; };
 		ACB6D91E256B69E97C6A8C0C /* Pods_NES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D6EBEAC7EB7C2FF32068B7 /* Pods_NES.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		495CA35B215333690012C46B /* NewSubscriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewSubscriptionViewController.xib; sourceTree = "<group>"; };
 		495CA35D215336880012C46B /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		495CA361215354600012C46B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		495CA36521547AEA0012C46B /* UIColor+Brightness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Brightness.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */,
 				495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */,
+				495CA36521547AEA0012C46B /* UIColor+Brightness.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				495CA34A2151F8EA0012C46B /* SubscriptionTableViewCell.swift in Sources */,
 				495CA34E2151FC060012C46B /* AddSubListViewController.swift in Sources */,
 				495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */,
+				495CA36621547AEA0012C46B /* UIColor+Brightness.swift in Sources */,
 				495CA35A215333530012C46B /* NewSubscriptionViewController.swift in Sources */,
 				495CA35E215336880012C46B /* SubscriptionManager.swift in Sources */,
 				495CA3582153333A0012C46B /* Subscription.swift in Sources */,
@@ -455,7 +459,10 @@
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.subscriptions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -473,7 +480,10 @@
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.subscriptions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

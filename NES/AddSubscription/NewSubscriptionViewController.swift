@@ -10,21 +10,41 @@ import UIKit
 
 class NewSubscriptionViewController: UIViewController {
 
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    private var chosenColor = UIColor.black {
+        didSet {
+            let brightness = chosenColor.determineBrightness()
+            chosenBrightness = brightness
+            
+            switch brightness {
+            case .dark:
+                oppositeBrightnessColor = .white
+            case .bright:
+                oppositeBrightnessColor = .black
+            }
+        }
+    }
+    private var chosenBrightness = ColorBrightness.dark
+    private var oppositeBrightnessColor = UIColor.white
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        chosenColor = .black
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(createButtonPressed(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        navigationItem.leftBarButtonItem?.tintColor = .red
 
-        containerView.backgroundColor = .black
-        containerView.roundCorners(radius: 10.0)
+        title = "New Subscription"
 
-        titleTextField.textColor = .white
-        titleTextField.attributedPlaceholder = NSAttributedString(string: "Subscription Title", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.5)])
+        contentView.backgroundColor = .clear
 
-        createButton.setTitle("Create Subscription", for: .normal)
+        setColors()
     }
 
     // MARK: - Actions
@@ -42,6 +62,18 @@ class NewSubscriptionViewController: UIViewController {
 
     @objc private func cancel() {
         presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+
+    // MARK: - Helpers
+
+    private func setColors() {
+        navigationController?.navigationBar.barTintColor = chosenColor
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: oppositeBrightnessColor]
+
+        view.backgroundColor = chosenColor
+
+        titleTextField.textColor = oppositeBrightnessColor
+        titleTextField.attributedPlaceholder = NSAttributedString(string: "Subscription Title", attributes: [NSAttributedString.Key.foregroundColor: oppositeBrightnessColor.withAlphaComponent(0.5)])
     }
 
 }
