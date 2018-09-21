@@ -30,7 +30,7 @@ class NewSubscriptionViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func createButtonPressed(_ sender: UIButton) {
-        if let name = titleTextField.text {
+        if let name = titleTextField.text, name != "" {
             let new = Subscription()
             new.name = name
 
