@@ -18,10 +18,18 @@ extension UIColor {
 
     func determineBrightness() -> ColorBrightness {
         let color = CIColor(color: self)
-        if (color.red * 299 + color.green * 587 + color.blue * 114) / 1000 < 0.5 {
+        if (color.red * 299 + color.green * 587 + color.blue * 114) / 1000 < 0.75 { // Produces more "dark" colors. 0.5 is default.
             return .dark
         } else {
             return .bright
+        }
+    }
+
+    func oppositeColorBasedOnBrightness() -> UIColor {
+        if determineBrightness() == .dark {
+            return .white
+        } else {
+            return .black
         }
     }
 

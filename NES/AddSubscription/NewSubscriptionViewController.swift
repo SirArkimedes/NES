@@ -17,16 +17,6 @@ class NewSubscriptionViewController: UIViewController {
 
     private var chosenSubColor: SubDefaultColors = .black {
         didSet {
-            let brightness = chosenColor.determineBrightness()
-            chosenBrightness = brightness
-
-            switch brightness {
-            case .dark:
-                oppositeBrightnessColor = .white
-            case .bright:
-                oppositeBrightnessColor = .black
-            }
-
             UIView.animate(withDuration: 0.25) {
                 self.setColors()
             }
@@ -37,8 +27,6 @@ class NewSubscriptionViewController: UIViewController {
             return chosenSubColor.color
         }
     }
-    private var chosenBrightness = ColorBrightness.dark
-    private var oppositeBrightnessColor = UIColor.white
 
     private let colorsToChooseFrom = SubDefaultColors.array()
 
@@ -88,12 +76,12 @@ class NewSubscriptionViewController: UIViewController {
 
     private func setColors() { // This is colors that can be animated.
         navigationController?.navigationBar.barTintColor = chosenColor
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: oppositeBrightnessColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness()]
 
         view.backgroundColor = chosenColor
 
-        titleTextField.textColor = oppositeBrightnessColor
-        titleTextField.attributedPlaceholder = NSAttributedString(string: "Subscription Title", attributes: [NSAttributedString.Key.foregroundColor: oppositeBrightnessColor.withAlphaComponent(0.5)])
+        titleTextField.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        titleTextField.attributedPlaceholder = NSAttributedString(string: "Subscription Title", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
     }
 
 }

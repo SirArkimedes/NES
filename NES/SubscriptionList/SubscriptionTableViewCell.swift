@@ -32,6 +32,7 @@ class SubscriptionTableViewCell: UITableViewCell {
     func configure(with viewModel: ViewModel) {
         titleLabel.text = viewModel.title
         detailView.backgroundColor = viewModel.backgroundColor
+        titleLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
     }
 
 }
