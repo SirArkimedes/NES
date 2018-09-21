@@ -16,6 +16,7 @@ class SubscriptionTableViewCell: UITableViewCell {
 
     struct ViewModel {
         let title: String
+        let backgroundColor: UIColor
     }
 
     override func awakeFromNib() {
@@ -30,6 +31,7 @@ class SubscriptionTableViewCell: UITableViewCell {
 
     func configure(with viewModel: ViewModel) {
         titleLabel.text = viewModel.title
+        detailView.backgroundColor = viewModel.backgroundColor
     }
 
 }

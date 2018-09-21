@@ -24,6 +24,8 @@ class SubscriptionListViewController: UIViewController {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: String(describing: SubscriptionTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubscriptionTableViewCell.self))
 
+        tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: view.safeAreaInsets.bottom, right: 0.0)
+
         SubscriptionManager.instance.bind {
             self.tableView.reloadData()
         }
@@ -55,7 +57,8 @@ extension SubscriptionListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SubscriptionTableViewCell.self), for: indexPath) as! SubscriptionTableViewCell
 
         let sub = SubscriptionManager.instance.getSubscriptionAt(index: indexPath.row)
-        cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name))
+        let color = UIColor.color(red: sub.colorRed, green: sub.colorGreen, blue: sub.colorBlue)
+        cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name, backgroundColor: color))
 
         return cell
     }

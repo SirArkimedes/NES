@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pc3-EH-pVR">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
@@ -30,7 +30,7 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pc3-EH-pVR" secondAttribute="trailing" id="6qJ-zJ-yO9"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Pc3-EH-pVR" secondAttribute="top" constant="20" id="HdD-wd-mPO"/>
-                <constraint firstItem="Pc3-EH-pVR" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="20" id="eXw-vg-ibJ"/>
+                <constraint firstItem="Pc3-EH-pVR" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="eXw-vg-ibJ"/>
                 <constraint firstItem="Pc3-EH-pVR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ib0-jQ-rsP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

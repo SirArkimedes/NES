@@ -24,6 +24,7 @@
 		495CA35C215333690012C46B /* NewSubscriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495CA35B215333690012C46B /* NewSubscriptionViewController.xib */; };
 		495CA35E215336880012C46B /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA35D215336880012C46B /* SubscriptionManager.swift */; };
 		495CA362215354600012C46B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495CA361215354600012C46B /* CloudKit.framework */; };
+		495CA36621547AEA0012C46B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA36521547AEA0012C46B /* UIColorExtensions.swift */; };
 		495CA3642153E3F00012C46B /* PulleyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA3632153E3F00012C46B /* PulleyManager.swift */; };
 		ACB6D91E256B69E97C6A8C0C /* Pods_NES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D6EBEAC7EB7C2FF32068B7 /* Pods_NES.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		495CA35B215333690012C46B /* NewSubscriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewSubscriptionViewController.xib; sourceTree = "<group>"; };
 		495CA35D215336880012C46B /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		495CA361215354600012C46B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		495CA36521547AEA0012C46B /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		495CA3632153E3F00012C46B /* PulleyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulleyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 			children = (
 				495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */,
 				495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */,
+				495CA36521547AEA0012C46B /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				495CA3642153E3F00012C46B /* PulleyManager.swift in Sources */,
 				495CA34E2151FC060012C46B /* AddSubListViewController.swift in Sources */,
 				495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */,
+				495CA36621547AEA0012C46B /* UIColorExtensions.swift in Sources */,
 				495CA35A215333530012C46B /* NewSubscriptionViewController.swift in Sources */,
 				495CA35E215336880012C46B /* SubscriptionManager.swift in Sources */,
 				495CA3582153333A0012C46B /* Subscription.swift in Sources */,
