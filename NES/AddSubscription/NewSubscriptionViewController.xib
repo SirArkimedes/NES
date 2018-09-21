@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewSubscriptionViewController" customModule="NES" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="Ig3-ds-il3" id="3nr-MV-wQH"/>
+                <outlet property="colorCollectionView" destination="Ig3-ds-il3" id="e1x-0C-cc3"/>
                 <outlet property="contentView" destination="okX-Pm-QZc" id="9en-SY-gt2"/>
                 <outlet property="scrollView" destination="gLJ-Ve-al0" id="d7Y-33-2z9"/>
                 <outlet property="titleTextField" destination="Wm7-ib-8yG" id="DeB-9f-vad"/>
@@ -30,13 +30,13 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okX-Pm-QZc" userLabel="Content View">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             <subviews>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ig3-ds-il3">
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ig3-ds-il3">
                                     <rect key="frame" x="0.0" y="123" width="375" height="53"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="53" id="EIf-VC-Mo2"/>
                                     </constraints>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EvO-dp-h0o">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EvO-dp-h0o">
                                         <size key="itemSize" width="50" height="50"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>

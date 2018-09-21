@@ -57,7 +57,8 @@ extension SubscriptionListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SubscriptionTableViewCell.self), for: indexPath) as! SubscriptionTableViewCell
 
         let sub = SubscriptionManager.instance.getSubscriptionAt(index: indexPath.row)
-        cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name))
+        let color = UIColor.color(red: sub.colorRed, green: sub.colorGreen, blue: sub.colorBlue)
+        cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name, backgroundColor: color))
 
         return cell
     }
