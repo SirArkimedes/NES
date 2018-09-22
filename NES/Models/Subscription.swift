@@ -113,6 +113,8 @@ class Subscription: Object {
     @objc dynamic var name = ""
     @objc dynamic var deleted = false
 
+    @objc dynamic var emojiIcon: String?
+
     @objc dynamic var colorRed = 255
     @objc dynamic var colorGreen = 255
     @objc dynamic var colorBlue = 255

@@ -71,6 +71,10 @@ class NewSubscriptionViewController: UIViewController {
             new.colorGreen = chosenSubColor.getGreen()
             new.colorBlue = chosenSubColor.getBlue()
 
+            if let emoji = emojiLabel.text {
+                new.emojiIcon = emoji
+            }
+
             SubscriptionManager.instance.addSubscription(subscription: new)
             cancel()
         } else {

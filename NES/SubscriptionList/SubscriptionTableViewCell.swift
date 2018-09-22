@@ -12,11 +12,13 @@ class SubscriptionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var detailView: UIView!
 
+    @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
 
     struct ViewModel {
         let title: String
         let backgroundColor: UIColor
+        let emoji: String?
     }
 
     override func awakeFromNib() {
@@ -33,6 +35,10 @@ class SubscriptionTableViewCell: UITableViewCell {
         titleLabel.text = viewModel.title
         detailView.backgroundColor = viewModel.backgroundColor
         titleLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
+
+        if let emoji = viewModel.emoji {
+            emojiLabel.text = emoji
+        }
     }
 
 }
