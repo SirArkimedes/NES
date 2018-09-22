@@ -17,6 +17,7 @@ enum SubDefaultColors {
     case purple
     case gray
     case orange
+    case green
     case black
     case white
 
@@ -43,6 +44,8 @@ enum SubDefaultColors {
             return 61
         case .orange:
             return 243
+        case .green:
+            return 0
         case .black:
             return 0
         case .white:
@@ -64,6 +67,8 @@ enum SubDefaultColors {
             return 30
         case .orange:
             return 119
+        case .green:
+            return 177
         case .black:
             return 0
         case .white:
@@ -85,6 +90,8 @@ enum SubDefaultColors {
             return 109
         case .orange:
             return 54
+        case .green:
+            return 89
         case .black:
             return 0
         case .white:
@@ -96,8 +103,8 @@ enum SubDefaultColors {
 
     static func array() -> [SubDefaultColors] {
         return [SubDefaultColors.black, SubDefaultColors.purple, SubDefaultColors.orange,
-                SubDefaultColors.red, SubDefaultColors.blue, SubDefaultColors.yellow,
-                SubDefaultColors.gray, SubDefaultColors.white]
+                SubDefaultColors.red, SubDefaultColors.green, SubDefaultColors.blue,
+                SubDefaultColors.yellow, SubDefaultColors.gray, SubDefaultColors.white]
     }
 }
 
