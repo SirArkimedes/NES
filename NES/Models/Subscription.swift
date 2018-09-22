@@ -95,9 +95,9 @@ enum SubDefaultColors {
     // MARK: - Statics
 
     static func array() -> [SubDefaultColors] {
-        return [SubDefaultColors.red, SubDefaultColors.blue, SubDefaultColors.yellow,
-                SubDefaultColors.gray, SubDefaultColors.purple, SubDefaultColors.orange,
-                SubDefaultColors.black, SubDefaultColors.white]
+        return [SubDefaultColors.black, SubDefaultColors.purple, SubDefaultColors.orange,
+                SubDefaultColors.red, SubDefaultColors.blue, SubDefaultColors.yellow,
+                SubDefaultColors.gray, SubDefaultColors.white]
     }
 }
 
