@@ -18,7 +18,6 @@ class IconSelectorViewController: UIViewController {
 
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var doneButton: UIButton!
     
     private let subColor: SubDefaultColors
     private let delegate: IconSelectorViewControllerDelegate
@@ -42,6 +41,7 @@ class IconSelectorViewController: UIViewController {
 
         navigationController?.navigationBar.barTintColor = subColor.color
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: subColor.color.oppositeColorBasedOnBrightness()]
+        navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done)), animated: true)
 
         view.backgroundColor = subColor.color
 
@@ -65,16 +65,11 @@ class IconSelectorViewController: UIViewController {
         emojiInOrder.append(contentsOf: emojiCategories["people"]!)
         emojiInOrder.append(contentsOf: emojiCategories["symbols"]!)
         emojiInOrder.append(contentsOf: emojiCategories["flags"]!)
-
-        let v = createSafeAreaSpacerView()
-        v.backgroundColor = subColor.color
-
-        doneButton.backgroundColor = subColor.color
-        doneButton.setTitle("Done", for: .normal)
-        doneButton.setTitleColor(subColor.color.oppositeColorBasedOnBrightness(), for: .normal)
     }
 
-    @IBAction func doneButtonPressed(_ sender: UIButton) {
+    // MARK: - Actions
+
+    @objc private func done() {
         navigationController?.popViewController(animated: true)
     }
 }

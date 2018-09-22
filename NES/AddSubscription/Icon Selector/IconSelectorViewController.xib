@@ -13,7 +13,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IconSelectorViewController" customModule="NES" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="RsI-pX-Cy2" id="bLZ-D9-YNp"/>
-                <outlet property="doneButton" destination="4w1-it-OLH" id="dqj-7w-Ma7"/>
                 <outlet property="emojiLabel" destination="yRd-Sm-3S0" id="bnQ-Tk-oyW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uqP-ic-cC8"/>
             </connections>
@@ -43,28 +42,15 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4w1-it-OLH">
-                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Psr-fK-MjQ"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="doneButtonPressed:" destination="-1" eventType="touchUpInside" id="83t-Rd-21w"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4w1-it-OLH" secondAttribute="bottom" id="0rA-hw-FZf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RsI-pX-Cy2" secondAttribute="trailing" id="2bQ-4b-08K"/>
                 <constraint firstAttribute="bottom" secondItem="RsI-pX-Cy2" secondAttribute="bottom" id="5US-8v-RzW"/>
                 <constraint firstItem="RsI-pX-Cy2" firstAttribute="top" secondItem="yRd-Sm-3S0" secondAttribute="bottom" constant="8" id="F3B-uz-9Pw"/>
                 <constraint firstItem="yRd-Sm-3S0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="Kgf-ZC-7xw"/>
                 <constraint firstItem="RsI-pX-Cy2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Tyw-d2-m0m"/>
                 <constraint firstItem="yRd-Sm-3S0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ZJd-oG-aQT"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4w1-it-OLH" secondAttribute="trailing" id="rR5-cS-ZB1"/>
-                <constraint firstItem="4w1-it-OLH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wt3-Rv-mjD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
