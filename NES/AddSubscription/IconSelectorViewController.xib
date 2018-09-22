@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IconSelectorViewController" customModule="NES" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="RsI-pX-Cy2" id="bLZ-D9-YNp"/>
+                <outlet property="emojiLabel" destination="yRd-Sm-3S0" id="bnQ-Tk-oyW"/>
+                <outlet property="view" destination="iN0-l3-epB" id="uqP-ic-cC8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRd-Sm-3S0">
+                    <rect key="frame" x="162.5" y="36" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="fte-ew-PEw"/>
+                        <constraint firstAttribute="height" constant="50" id="ocQ-xD-oCG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RsI-pX-Cy2">
+                    <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="veX-Rw-pmr">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RsI-pX-Cy2" secondAttribute="trailing" id="2bQ-4b-08K"/>
+                <constraint firstAttribute="bottom" secondItem="RsI-pX-Cy2" secondAttribute="bottom" id="5US-8v-RzW"/>
+                <constraint firstItem="RsI-pX-Cy2" firstAttribute="top" secondItem="yRd-Sm-3S0" secondAttribute="bottom" constant="16" id="F3B-uz-9Pw"/>
+                <constraint firstItem="yRd-Sm-3S0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="Kgf-ZC-7xw"/>
+                <constraint firstItem="RsI-pX-Cy2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Tyw-d2-m0m"/>
+                <constraint firstItem="yRd-Sm-3S0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ZJd-oG-aQT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

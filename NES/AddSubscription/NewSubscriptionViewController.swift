@@ -15,7 +15,10 @@ class NewSubscriptionViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var colorCollectionView: UICollectionView!
 
-    private var chosenSubColor: SubDefaultColors = .black {
+    @IBOutlet weak var iconButton: UIButton!
+    @IBOutlet weak var iconLabel: UILabel!
+
+    private var chosenSubColor: SubDefaultColors = .white {
         didSet {
             UIView.animate(withDuration: 0.25) {
                 self.setColors()
@@ -35,7 +38,6 @@ class NewSubscriptionViewController: UIViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(createButtonPressed(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
-        navigationItem.leftBarButtonItem?.tintColor = .red
 
         title = "New Subscription"
 
@@ -48,6 +50,11 @@ class NewSubscriptionViewController: UIViewController {
 
         (colorCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.9, right: 16.0)
         (colorCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing = 20.0
+
+        iconButton.roundCorners()
+        iconButton.layer.borderWidth = 2.0
+        iconButton.backgroundColor = .white
+        iconLabel.textColor = .lightGray
 
         setColors()
     }
@@ -71,17 +78,25 @@ class NewSubscriptionViewController: UIViewController {
     @objc private func cancel() {
         presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func iconButtonPressed(_ sender: UIButton) {
+        let vc = IconSelectorViewController(color: chosenSubColor)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
     // MARK: - Helpers
 
     private func setColors() { // This is colors that can be animated.
         navigationController?.navigationBar.barTintColor = chosenColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness()]
+        navigationItem.leftBarButtonItem?.tintColor = chosenColor.oppositeColorBasedOnBrightness()
 
         view.backgroundColor = chosenColor
 
         titleTextField.textColor = chosenColor.oppositeColorBasedOnBrightness()
         titleTextField.attributedPlaceholder = NSAttributedString(string: "Subscription Title", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
+
+        iconButton.layer.borderColor = chosenSubColor == .gray ? UIColor.black.cgColor : UIColor.lightGray.cgColor
     }
 
 }
