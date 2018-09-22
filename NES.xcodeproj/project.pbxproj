@@ -28,6 +28,8 @@
 		495CA36621547AEA0012C46B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA36521547AEA0012C46B /* UIColorExtensions.swift */; };
 		49907F492155F59A0059D634 /* IconSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49907F482155F59A0059D634 /* IconSelectorViewController.swift */; };
 		49907F4B2155F5AE0059D634 /* IconSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49907F4A2155F5AE0059D634 /* IconSelectorViewController.xib */; };
+		49907F4E21561E9B0059D634 /* IconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49907F4D21561E9B0059D634 /* IconCollectionViewCell.xib */; };
+		49907F5021561EAF0059D634 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49907F4F21561EAF0059D634 /* IconCollectionViewCell.swift */; };
 		ACB6D91E256B69E97C6A8C0C /* Pods_NES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D6EBEAC7EB7C2FF32068B7 /* Pods_NES.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		495CA36521547AEA0012C46B /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		49907F482155F59A0059D634 /* IconSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectorViewController.swift; sourceTree = "<group>"; };
 		49907F4A2155F5AE0059D634 /* IconSelectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconSelectorViewController.xib; sourceTree = "<group>"; };
+		49907F4D21561E9B0059D634 /* IconCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconCollectionViewCell.xib; sourceTree = "<group>"; };
+		49907F4F21561EAF0059D634 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,12 +138,11 @@
 		495CA355215201C10012C46B /* AddSubscription */ = {
 			isa = PBXGroup;
 			children = (
+				49907F4C21561E830059D634 /* Icon Selector */,
 				495CA34F2151FC190012C46B /* AddSubListViewController.xib */,
 				495CA34D2151FC060012C46B /* AddSubListViewController.swift */,
 				495CA35B215333690012C46B /* NewSubscriptionViewController.xib */,
 				495CA359215333530012C46B /* NewSubscriptionViewController.swift */,
-				49907F4A2155F5AE0059D634 /* IconSelectorViewController.xib */,
-				49907F482155F59A0059D634 /* IconSelectorViewController.swift */,
 			);
 			path = AddSubscription;
 			sourceTree = "<group>";
@@ -152,6 +155,17 @@
 				495CA3572153333A0012C46B /* Subscription.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		49907F4C21561E830059D634 /* Icon Selector */ = {
+			isa = PBXGroup;
+			children = (
+				49907F4A2155F5AE0059D634 /* IconSelectorViewController.xib */,
+				49907F482155F59A0059D634 /* IconSelectorViewController.swift */,
+				49907F4D21561E9B0059D634 /* IconCollectionViewCell.xib */,
+				49907F4F21561EAF0059D634 /* IconCollectionViewCell.swift */,
+			);
+			path = "Icon Selector";
 			sourceTree = "<group>";
 		};
 		779E4464F9AC4C33E73518D4 /* Pods */ = {
@@ -243,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49907F4E21561E9B0059D634 /* IconCollectionViewCell.xib in Resources */,
 				49907F4B2155F5AE0059D634 /* IconSelectorViewController.xib in Resources */,
 				495CA3482151F8CB0012C46B /* SubscriptionTableViewCell.xib in Resources */,
 				495CA35C215333690012C46B /* NewSubscriptionViewController.xib in Resources */,
@@ -314,6 +329,7 @@
 				495CA34A2151F8EA0012C46B /* SubscriptionTableViewCell.swift in Sources */,
 				495CA3642153E3F00012C46B /* PulleyManager.swift in Sources */,
 				495CA34E2151FC060012C46B /* AddSubListViewController.swift in Sources */,
+				49907F5021561EAF0059D634 /* IconCollectionViewCell.swift in Sources */,
 				49907F492155F59A0059D634 /* IconSelectorViewController.swift in Sources */,
 				495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */,
 				495CA36621547AEA0012C46B /* UIColorExtensions.swift in Sources */,
@@ -473,7 +489,10 @@
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.subscriptions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -491,7 +510,10 @@
 				DEVELOPMENT_TEAM = 665Y3S9688;
 				INFOPLIST_FILE = NES/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xyello.subscriptions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
