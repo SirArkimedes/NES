@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="colorCollectionView" destination="Ig3-ds-il3" id="e1x-0C-cc3"/>
                 <outlet property="contentView" destination="okX-Pm-QZc" id="9en-SY-gt2"/>
+                <outlet property="emojiLabel" destination="HAz-hv-Nby" id="Sa8-nr-XYb"/>
                 <outlet property="iconButton" destination="C0d-F8-uTu" id="aYQ-KV-9LZ"/>
                 <outlet property="iconLabel" destination="8DL-M5-tQ8" id="hzC-9u-aQo"/>
                 <outlet property="scrollView" destination="gLJ-Ve-al0" id="d7Y-33-2z9"/>
@@ -65,6 +66,12 @@
                                         <action selector="iconButtonPressed:" destination="-1" eventType="touchUpInside" id="NPu-tZ-TFV"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAz-hv-Nby">
+                                    <rect key="frame" x="157.5" y="20" width="60" height="60"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set icon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DL-M5-tQ8">
                                     <rect key="frame" x="162.5" y="26" width="50" height="48"/>
                                     <constraints>
@@ -82,7 +89,11 @@
                                 <constraint firstItem="C0d-F8-uTu" firstAttribute="centerX" secondItem="okX-Pm-QZc" secondAttribute="centerX" id="3sJ-11-kaP"/>
                                 <constraint firstItem="8DL-M5-tQ8" firstAttribute="centerY" secondItem="C0d-F8-uTu" secondAttribute="centerY" id="63C-5S-ray"/>
                                 <constraint firstItem="Ig3-ds-il3" firstAttribute="leading" secondItem="okX-Pm-QZc" secondAttribute="leading" id="ORF-U9-1kh"/>
+                                <constraint firstItem="HAz-hv-Nby" firstAttribute="top" secondItem="C0d-F8-uTu" secondAttribute="top" id="ZTy-nr-gJg"/>
+                                <constraint firstItem="HAz-hv-Nby" firstAttribute="bottom" secondItem="C0d-F8-uTu" secondAttribute="bottom" id="aO5-Af-Xzg"/>
+                                <constraint firstItem="HAz-hv-Nby" firstAttribute="trailing" secondItem="C0d-F8-uTu" secondAttribute="trailing" id="dgw-Hf-JQq"/>
                                 <constraint firstItem="Wm7-ib-8yG" firstAttribute="top" secondItem="C0d-F8-uTu" secondAttribute="bottom" constant="20" id="eLd-O7-XcT"/>
+                                <constraint firstItem="HAz-hv-Nby" firstAttribute="leading" secondItem="C0d-F8-uTu" secondAttribute="leading" id="fX1-Lo-IQs"/>
                                 <constraint firstItem="Wm7-ib-8yG" firstAttribute="leading" secondItem="okX-Pm-QZc" secondAttribute="leading" constant="31" id="gFE-ZL-pPJ"/>
                                 <constraint firstItem="C0d-F8-uTu" firstAttribute="top" secondItem="okX-Pm-QZc" secondAttribute="top" constant="20" id="gJE-yc-dBV"/>
                                 <constraint firstItem="Wm7-ib-8yG" firstAttribute="centerX" secondItem="okX-Pm-QZc" secondAttribute="centerX" id="gjc-Iw-qAa"/>

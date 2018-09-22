@@ -21,13 +21,22 @@ class IconSelectorViewController: UIViewController {
     
     private let subColor: SubDefaultColors
     private let delegate: IconSelectorViewControllerDelegate
+    private let subBackColor: UIColor
+    private let currentlySetEmoji: String?
 
     private let emojiCategories = Smile.emojiCategories
     private var emojiInOrder = [String]()
 
-    init(color: SubDefaultColors, delegate: IconSelectorViewControllerDelegate) {
+    init(color: SubDefaultColors, currentlySetEmoji: String?, delegate: IconSelectorViewControllerDelegate) {
         subColor = color
+        self.currentlySetEmoji = currentlySetEmoji
         self.delegate = delegate
+
+        let negative: CGFloat = 30
+        subBackColor = subColor == .black ? UIColor.lightGray.withAlphaComponent(0.5) : UIColor(red: (CGFloat(subColor.getRed()) - negative)/255,
+                                                                                            green: (CGFloat(subColor.getGreen()) - negative)/255,
+                                                                                            blue: (CGFloat(subColor.getBlue()) - negative)/255,
+                                                                                            alpha: 0.5)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -41,19 +50,22 @@ class IconSelectorViewController: UIViewController {
 
         navigationController?.navigationBar.barTintColor = subColor.color
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: subColor.color.oppositeColorBasedOnBrightness()]
-        navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done)), animated: true)
+        navigationItem.setRightBarButton(UIBarButtonItem(title: "Select", style: .done, target: self, action: #selector(done)), animated: true)
 
         view.backgroundColor = subColor.color
 
-        emojiLabel.text = "🍻"
+        emojiLabel.text = currentlySetEmoji ?? "❔"
         emojiLabel.roundCorners()
         emojiLabel.layer.borderWidth = 2.0
-        emojiLabel.layer.borderColor = subColor == .white ? UIColor.lightGray.cgColor : UIColor.white.cgColor
+        emojiLabel.layer.borderColor = subBackColor.cgColor
 
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         collectionView.register(UINib(nibName: String(describing: IconCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: IconCollectionViewCell.self))
+
+        (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing = 5.0
 
         // Put the emoji categories in order...
         emojiInOrder.append(contentsOf: emojiCategories["people"]!)
@@ -82,6 +94,10 @@ extension IconSelectorViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: IconCollectionViewCell.self), for: indexPath) as! IconCollectionViewCell
         cell.label.text = emojiInOrder[indexPath.row]
+
+        cell.backgroundColor = subBackColor
+        cell.roundCorners(radius: 5.0)
+
         return cell
     }
 }

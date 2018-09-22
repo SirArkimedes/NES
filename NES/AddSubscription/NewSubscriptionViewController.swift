@@ -17,7 +17,8 @@ class NewSubscriptionViewController: UIViewController {
 
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var iconLabel: UILabel!
-
+    @IBOutlet weak var emojiLabel: UILabel!
+    
     private var chosenSubColor: SubDefaultColors = .white {
         didSet {
             UIView.animate(withDuration: 0.25) {
@@ -55,6 +56,7 @@ class NewSubscriptionViewController: UIViewController {
         iconButton.layer.borderWidth = 2.0
         iconButton.backgroundColor = .white
         iconLabel.textColor = .lightGray
+        emojiLabel.text = nil
 
         setColors()
     }
@@ -80,7 +82,7 @@ class NewSubscriptionViewController: UIViewController {
     }
     
     @IBAction func iconButtonPressed(_ sender: UIButton) {
-        let vc = IconSelectorViewController(color: chosenSubColor, delegate: self)
+        let vc = IconSelectorViewController(color: chosenSubColor, currentlySetEmoji: emojiLabel.text, delegate: self)
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -103,12 +105,12 @@ class NewSubscriptionViewController: UIViewController {
 
 extension NewSubscriptionViewController: IconSelectorViewControllerDelegate {
     func didSelectIcon(icon: String) {
-        //
+        iconLabel.text = ""
     }
 
     func didSelectEmoji(emoji: String) {
-        // TODO: Fix this. This shouldn't be setting iconLabel.
-        iconLabel.text = emoji
+        iconLabel.text = ""
+        emojiLabel.text = emoji
     }
 }
 

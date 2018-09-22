@@ -33,7 +33,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RsI-pX-Cy2">
-                    <rect key="frame" x="0.0" y="109" width="375" height="558"/>
+                    <rect key="frame" x="0.0" y="117" width="375" height="550"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="veX-Rw-pmr">
                         <size key="itemSize" width="50" height="50"/>
@@ -47,7 +47,7 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RsI-pX-Cy2" secondAttribute="trailing" id="2bQ-4b-08K"/>
                 <constraint firstAttribute="bottom" secondItem="RsI-pX-Cy2" secondAttribute="bottom" id="5US-8v-RzW"/>
-                <constraint firstItem="RsI-pX-Cy2" firstAttribute="top" secondItem="yRd-Sm-3S0" secondAttribute="bottom" constant="8" id="F3B-uz-9Pw"/>
+                <constraint firstItem="RsI-pX-Cy2" firstAttribute="top" secondItem="yRd-Sm-3S0" secondAttribute="bottom" constant="16" id="F3B-uz-9Pw"/>
                 <constraint firstItem="yRd-Sm-3S0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="Kgf-ZC-7xw"/>
                 <constraint firstItem="RsI-pX-Cy2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Tyw-d2-m0m"/>
                 <constraint firstItem="yRd-Sm-3S0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ZJd-oG-aQT"/>
