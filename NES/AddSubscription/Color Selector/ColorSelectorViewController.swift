@@ -57,7 +57,7 @@ class ColorSelectorViewController: UIViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "colorCollectionCell")
         collectionView.register(UINib(nibName: String(describing: IconCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: IconCollectionViewCell.self))
 
-        (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 42.0, right: 16.0)
+        (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 62.0, right: 16.0)
 
         // Put the emoji categories in order...
         emojiInOrder.append(contentsOf: emojiCategories["people"]!)
@@ -66,7 +66,6 @@ class ColorSelectorViewController: UIViewController {
         emojiInOrder.append(contentsOf: emojiCategories["activity"]!)
         emojiInOrder.append(contentsOf: emojiCategories["places"]!)
         emojiInOrder.append(contentsOf: emojiCategories["objects"]!)
-        emojiInOrder.append(contentsOf: emojiCategories["people"]!)
         emojiInOrder.append(contentsOf: emojiCategories["symbols"]!)
         emojiInOrder.append(contentsOf: emojiCategories["flags"]!)
 

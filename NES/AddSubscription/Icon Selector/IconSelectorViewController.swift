@@ -69,7 +69,6 @@ class IconSelectorViewController: UIViewController {
         emojiInOrder.append(contentsOf: emojiCategories["activity"]!)
         emojiInOrder.append(contentsOf: emojiCategories["places"]!)
         emojiInOrder.append(contentsOf: emojiCategories["objects"]!)
-        emojiInOrder.append(contentsOf: emojiCategories["people"]!)
         emojiInOrder.append(contentsOf: emojiCategories["symbols"]!)
         emojiInOrder.append(contentsOf: emojiCategories["flags"]!)
     }
