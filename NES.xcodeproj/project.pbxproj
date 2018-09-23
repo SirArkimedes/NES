@@ -78,6 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4914CFB421574CA600B48602 /* Color Selector */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Color Selector";
+			sourceTree = "<group>";
+		};
 		495CA3242151F17B0012C46B = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +145,7 @@
 		495CA355215201C10012C46B /* AddSubscription */ = {
 			isa = PBXGroup;
 			children = (
+				4914CFB421574CA600B48602 /* Color Selector */,
 				49907F4C21561E830059D634 /* Icon Selector */,
 				495CA34F2151FC190012C46B /* AddSubListViewController.xib */,
 				495CA34D2151FC060012C46B /* AddSubListViewController.swift */,

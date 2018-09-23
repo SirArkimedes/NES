@@ -56,19 +56,19 @@ class NewSubscriptionViewController: UIViewController {
         iconLabel.textColor = .lightGray
         emojiLabel.text = nil
 
-        leftColorButton.roundCorners()
+        leftColorButton.roundCorners(radius: 10.0)
         leftColorButton.setTitle("", for: .normal)
         leftColorButton.backgroundColor = SubDefaultColors.red.color
         leftColorButton.layer.borderWidth = 2.0
         leftColorButton.layer.borderColor = UIColor.white.cgColor
 
-        middleColorButton.roundCorners()
+        middleColorButton.roundCorners(radius: 10.0)
         middleColorButton.setTitle("", for: .normal)
         middleColorButton.backgroundColor = SubDefaultColors.green.color
         middleColorButton.layer.borderWidth = 2.0
         middleColorButton.layer.borderColor = UIColor.white.cgColor
 
-        rightColorButton.roundCorners()
+        rightColorButton.roundCorners(radius: 10.0)
         rightColorButton.setTitle("", for: .normal)
         rightColorButton.backgroundColor = SubDefaultColors.blue.color
         rightColorButton.layer.borderWidth = 2.0
