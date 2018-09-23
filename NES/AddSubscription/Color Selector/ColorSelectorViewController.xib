@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorSelectorViewController" customModule="NES" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="gW2-kI-b65" id="uhI-xI-1VA"/>
+                <outlet property="lineView" destination="fE4-0b-muS" id="qYr-d1-MtE"/>
+                <outlet property="segmentControl" destination="24q-88-7t9" id="VxR-BA-5uR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gW2-kI-b65">
+                    <rect key="frame" x="0.0" y="53" width="375" height="614"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sXZ-WX-hYP">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE4-0b-muS">
+                    <rect key="frame" x="0.0" y="44" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Yf8-T9-TN5"/>
+                    </constraints>
+                </view>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="24q-88-7t9">
+                    <rect key="frame" x="66.5" y="8" width="242" height="29"/>
+                    <segments>
+                        <segment title="Color" width="80"/>
+                        <segment title="Emoji" width="80"/>
+                        <segment title="Icon" width="80"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentControlValueChanged:" destination="-1" eventType="valueChanged" id="Zca-Lh-3as"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gW2-kI-b65" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8LY-aA-lFt"/>
+                <constraint firstItem="24q-88-7t9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9mw-dj-BOg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gW2-kI-b65" secondAttribute="bottom" id="Fpd-nw-sgX"/>
+                <constraint firstItem="24q-88-7t9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="G3t-dI-nqd"/>
+                <constraint firstItem="gW2-kI-b65" firstAttribute="top" secondItem="fE4-0b-muS" secondAttribute="bottom" constant="8" id="Sc9-kS-RYU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fE4-0b-muS" secondAttribute="trailing" id="d1l-o8-MLL"/>
+                <constraint firstItem="fE4-0b-muS" firstAttribute="top" secondItem="24q-88-7t9" secondAttribute="bottom" constant="8" id="dMk-Gr-1rT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gW2-kI-b65" secondAttribute="trailing" id="m2x-IJ-mRV"/>
+                <constraint firstItem="fE4-0b-muS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r94-a8-M8Y"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

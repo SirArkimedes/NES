@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Pulley
 
 class NewSubscriptionViewController: UIViewController {
 
@@ -38,15 +39,13 @@ class NewSubscriptionViewController: UIViewController {
         }
     }
 
-    private let colorsToChooseFrom = SubDefaultColors.array()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(createButtonPressed(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(createButtonPressed(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
 
-        title = "New Subscription"
+        title = "New"
 
         contentView.backgroundColor = .clear
 
@@ -119,12 +118,23 @@ class NewSubscriptionViewController: UIViewController {
     }
     
     @IBAction func moreColorsButtonPressed(_ sender: UIButton) {
+        let selector = ColorSelectorViewController(color: chosenSubColor)
+        let back = ColorAndIconShowViewController(color: chosenSubColor)
+        let nvc = UINavigationController(rootViewController: back)
+
+        selector.add(delegate: back)
+
+        let pulley = PulleyViewController(contentViewController: nvc, drawerViewController: selector)
+        pulley.initialDrawerPosition = .partiallyRevealed
+
+        present(pulley, animated: true, completion: nil)
     }
 
     // MARK: - Helpers
 
     private func setColors() { // This is colors that can be animated.
         navigationController?.navigationBar.barTintColor = chosenColor
+        navigationController?.navigationBar.tintColor = chosenColor.oppositeColorBasedOnBrightness()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness()]
         navigationItem.leftBarButtonItem?.tintColor = chosenColor.oppositeColorBasedOnBrightness()
 
@@ -149,29 +159,5 @@ extension NewSubscriptionViewController: IconSelectorViewControllerDelegate {
     func didSelectEmoji(emoji: String) {
         iconLabel.text = ""
         emojiLabel.text = emoji
-    }
-}
-
-extension NewSubscriptionViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colorsToChooseFrom.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colorCollectionCell", for: indexPath)
-        let color = colorsToChooseFrom[indexPath.row]
-
-        cell.backgroundColor = color.color
-        cell.roundCorners()
-        cell.layer.borderWidth = 2.0
-        cell.layer.borderColor = color == .white ? UIColor.lightGray.cgColor : UIColor.white.cgColor
-
-        return cell
-    }
-}
-
-extension NewSubscriptionViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        chosenSubColor = colorsToChooseFrom[indexPath.row]
     }
 }

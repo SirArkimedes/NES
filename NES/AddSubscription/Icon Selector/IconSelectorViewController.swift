@@ -42,7 +42,6 @@ class IconSelectorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Icon"
 
         navigationController?.navigationBar.barTintColor = subColor.color
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: subColor.color.oppositeColorBasedOnBrightness()]
