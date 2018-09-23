@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorSelectorViewController" customModule="NES" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="gW2-kI-b65" id="uhI-xI-1VA"/>
+                <outlet property="grabView" destination="VUJ-gv-R9F" id="KA8-pa-Qx1"/>
                 <outlet property="lineView" destination="fE4-0b-muS" id="qYr-d1-MtE"/>
                 <outlet property="segmentControl" destination="24q-88-7t9" id="VxR-BA-5uR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,25 +24,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gW2-kI-b65">
-                    <rect key="frame" x="0.0" y="53" width="375" height="614"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sXZ-WX-hYP">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE4-0b-muS">
-                    <rect key="frame" x="0.0" y="44" width="375" height="1"/>
-                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="Yf8-T9-TN5"/>
-                    </constraints>
-                </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="24q-88-7t9">
-                    <rect key="frame" x="66.5" y="8" width="242" height="29"/>
+                    <rect key="frame" x="66.5" y="23" width="242" height="29"/>
                     <segments>
                         <segment title="Color" width="80"/>
                         <segment title="Emoji" width="80"/>
@@ -51,20 +35,48 @@
                         <action selector="segmentControlValueChanged:" destination="-1" eventType="valueChanged" id="Zca-Lh-3as"/>
                     </connections>
                 </segmentedControl>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gW2-kI-b65">
+                    <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sXZ-WX-hYP">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fE4-0b-muS">
+                    <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Yf8-T9-TN5"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUJ-gv-R9F">
+                    <rect key="frame" x="137.5" y="8" width="100" height="7"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="GcX-C8-MxW"/>
+                        <constraint firstAttribute="height" constant="7" id="a8V-WO-a87"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="gW2-kI-b65" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8LY-aA-lFt"/>
                 <constraint firstItem="24q-88-7t9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9mw-dj-BOg"/>
+                <constraint firstAttribute="top" secondItem="VUJ-gv-R9F" secondAttribute="top" constant="-8" id="Exg-n2-FeU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gW2-kI-b65" secondAttribute="bottom" id="Fpd-nw-sgX"/>
-                <constraint firstItem="24q-88-7t9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="G3t-dI-nqd"/>
-                <constraint firstItem="gW2-kI-b65" firstAttribute="top" secondItem="fE4-0b-muS" secondAttribute="bottom" constant="8" id="Sc9-kS-RYU"/>
+                <constraint firstItem="gW2-kI-b65" firstAttribute="top" secondItem="fE4-0b-muS" secondAttribute="bottom" id="Sc9-kS-RYU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fE4-0b-muS" secondAttribute="trailing" id="d1l-o8-MLL"/>
                 <constraint firstItem="fE4-0b-muS" firstAttribute="top" secondItem="24q-88-7t9" secondAttribute="bottom" constant="8" id="dMk-Gr-1rT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gW2-kI-b65" secondAttribute="trailing" id="m2x-IJ-mRV"/>
                 <constraint firstItem="fE4-0b-muS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r94-a8-M8Y"/>
+                <constraint firstItem="24q-88-7t9" firstAttribute="top" secondItem="VUJ-gv-R9F" secondAttribute="bottom" constant="8" id="rQg-OU-hB7"/>
+                <constraint firstItem="VUJ-gv-R9F" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rXu-qn-LOV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
 </document>

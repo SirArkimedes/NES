@@ -119,10 +119,11 @@ class NewSubscriptionViewController: UIViewController {
     
     @IBAction func moreColorsButtonPressed(_ sender: UIButton) {
         let selector = ColorSelectorViewController(color: chosenSubColor)
-        let back = ColorAndIconShowViewController(color: chosenSubColor)
+        let back = ColorAndIconShowViewController(color: chosenSubColor, currentlySetEmoji: emojiLabel.text)
         let nvc = UINavigationController(rootViewController: back)
 
         selector.add(delegate: back)
+        selector.add(delegate: self)
 
         let pulley = PulleyViewController(contentViewController: nvc, drawerViewController: selector)
         pulley.initialDrawerPosition = .partiallyRevealed
@@ -157,6 +158,18 @@ extension NewSubscriptionViewController: IconSelectorViewControllerDelegate {
     }
 
     func didSelectEmoji(emoji: String) {
+        iconLabel.text = ""
+        emojiLabel.text = emoji
+    }
+}
+
+extension NewSubscriptionViewController: ColorSelectorViewControllerDelegate {
+    func didSelect(color: SubDefaultColors) {
+        chosenSubColor = color
+        setColors()
+    }
+
+    func didSelect(emoji: String) {
         iconLabel.text = ""
         emojiLabel.text = emoji
     }
