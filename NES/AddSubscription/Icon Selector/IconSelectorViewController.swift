@@ -31,12 +31,8 @@ class IconSelectorViewController: UIViewController {
         subColor = color
         self.currentlySetEmoji = currentlySetEmoji
         self.delegate = delegate
-
-        let negative: CGFloat = 30
-        subBackColor = subColor == .black ? UIColor.lightGray.withAlphaComponent(0.5) : UIColor(red: (CGFloat(subColor.getRed()) - negative)/255,
-                                                                                            green: (CGFloat(subColor.getGreen()) - negative)/255,
-                                                                                            blue: (CGFloat(subColor.getBlue()) - negative)/255,
-                                                                                            alpha: 0.5)
+        
+        subBackColor = subColor == .black ? UIColor.lightGray.withAlphaComponent(0.5) : subColor.color.darker(negative: 30).withAlphaComponent(0.5)
         super.init(nibName: nil, bundle: nil)
     }
 

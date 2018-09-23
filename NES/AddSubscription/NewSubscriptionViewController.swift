@@ -13,12 +13,18 @@ class NewSubscriptionViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var colorCollectionView: UICollectionView!
+
+    @IBOutlet weak var leftColorButton: UIButton!
+    @IBOutlet weak var middleColorButton: UIButton!
+    @IBOutlet weak var rightColorButton: UIButton!
 
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var iconLabel: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!
-    
+
+    @IBOutlet weak var moreColorsView: UIView!
+    @IBOutlet weak var moreColorsButton: UIButton!
+
     private var chosenSubColor: SubDefaultColors = .white {
         didSet {
             UIView.animate(withDuration: 0.25) {
@@ -44,19 +50,29 @@ class NewSubscriptionViewController: UIViewController {
 
         contentView.backgroundColor = .clear
 
-        colorCollectionView.dataSource = self
-        colorCollectionView.delegate = self
-        colorCollectionView.backgroundColor = .clear
-        colorCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "colorCollectionCell")
-
-        (colorCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.9, right: 16.0)
-        (colorCollectionView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing = 20.0
-
         iconButton.roundCorners()
         iconButton.layer.borderWidth = 2.0
         iconButton.backgroundColor = .white
         iconLabel.textColor = .lightGray
         emojiLabel.text = nil
+
+        leftColorButton.roundCorners()
+        leftColorButton.setTitle("", for: .normal)
+        leftColorButton.backgroundColor = SubDefaultColors.red.color
+        leftColorButton.layer.borderWidth = 2.0
+        leftColorButton.layer.borderColor = UIColor.white.cgColor
+
+        middleColorButton.roundCorners()
+        middleColorButton.setTitle("", for: .normal)
+        middleColorButton.backgroundColor = SubDefaultColors.green.color
+        middleColorButton.layer.borderWidth = 2.0
+        middleColorButton.layer.borderColor = UIColor.white.cgColor
+
+        rightColorButton.roundCorners()
+        rightColorButton.setTitle("", for: .normal)
+        rightColorButton.backgroundColor = SubDefaultColors.blue.color
+        rightColorButton.layer.borderWidth = 2.0
+        rightColorButton.layer.borderColor = UIColor.white.cgColor
 
         setColors()
     }
@@ -90,6 +106,21 @@ class NewSubscriptionViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    @IBAction func leftColorButtonPressed(_ sender: UIButton) {
+        chosenSubColor = .red
+    }
+
+    @IBAction func middleColorButtonPressed(_ sender: UIButton) {
+        chosenSubColor = .green
+    }
+
+    @IBAction func rightColorButtonPressed(_ sender: UIButton) {
+        chosenSubColor = .blue
+    }
+    
+    @IBAction func moreColorsButtonPressed(_ sender: UIButton) {
+    }
+
     // MARK: - Helpers
 
     private func setColors() { // This is colors that can be animated.
@@ -103,6 +134,9 @@ class NewSubscriptionViewController: UIViewController {
         titleTextField.attributedPlaceholder = NSAttributedString(string: "Subscription Title", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
 
         iconButton.layer.borderColor = chosenSubColor == .gray ? UIColor.black.cgColor : UIColor.lightGray.cgColor
+
+        moreColorsView.backgroundColor = chosenSubColor == .black ? UIColor.lightGray.withAlphaComponent(0.5) : chosenSubColor.color.darker(negative: 30).withAlphaComponent(0.5)
+        moreColorsButton.setTitleColor(chosenSubColor.color.oppositeColorBasedOnBrightness(), for: .normal)
     }
 
 }

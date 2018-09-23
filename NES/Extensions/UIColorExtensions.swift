@@ -14,6 +14,7 @@ enum ColorBrightness {
 }
 
 extension UIColor {
+
     // MARK: - Brightness
 
     func determineBrightness() -> ColorBrightness {
@@ -31,6 +32,16 @@ extension UIColor {
         } else {
             return .black
         }
+    }
+
+    // MARK: - Darker Color
+
+    func darker(negative: CGFloat) -> UIColor {
+        let color = CIColor(color: self)
+        return UIColor(red: color.red - (negative / 255),
+                green: color.green - (negative / 255),
+                blue: color.blue - (negative / 255),
+                alpha: 1.0)
     }
 
     // MARK: - Color from RGB Int
