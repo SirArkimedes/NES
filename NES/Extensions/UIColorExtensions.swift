@@ -49,4 +49,10 @@ extension UIColor {
     static func color(red: Int, green: Int, blue: Int) -> UIColor {
         return UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: 1.0)
     }
+
+    // MARK: - Color from Subscription
+
+    static func subscription(_ sub: Subscription) -> UIColor {
+        return UIColor.color(red: sub.colorRed, green: sub.colorGreen, blue: sub.colorBlue)
+    }
 }

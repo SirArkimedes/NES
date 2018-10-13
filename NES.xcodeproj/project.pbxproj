@@ -11,6 +11,8 @@
 		4914CFB8215755EB00B48602 /* ColorSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4914CFB6215755EB00B48602 /* ColorSelectorViewController.xib */; };
 		4914CFBB215769C000B48602 /* ColorAndIconShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914CFB9215769C000B48602 /* ColorAndIconShowViewController.swift */; };
 		4914CFBC215769C000B48602 /* ColorAndIconShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4914CFBA215769C000B48602 /* ColorAndIconShowViewController.xib */; };
+		492AAD392172A5F80042EFDB /* SubscriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AAD372172A5F80042EFDB /* SubscriptionDetailViewController.swift */; };
+		492AAD3A2172A5F80042EFDB /* SubscriptionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492AAD382172A5F80042EFDB /* SubscriptionDetailViewController.xib */; };
 		495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495CA3302151F17B0012C46B /* AppDelegate.swift */; };
 		495CA3362151F17B0012C46B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3342151F17B0012C46B /* Main.storyboard */; };
 		495CA3382151F17C0012C46B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495CA3372151F17C0012C46B /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		4914CFB6215755EB00B48602 /* ColorSelectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorSelectorViewController.xib; sourceTree = "<group>"; };
 		4914CFB9215769C000B48602 /* ColorAndIconShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAndIconShowViewController.swift; sourceTree = "<group>"; };
 		4914CFBA215769C000B48602 /* ColorAndIconShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorAndIconShowViewController.xib; sourceTree = "<group>"; };
+		492AAD372172A5F80042EFDB /* SubscriptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionDetailViewController.swift; sourceTree = "<group>"; };
+		492AAD382172A5F80042EFDB /* SubscriptionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionDetailViewController.xib; sourceTree = "<group>"; };
 		495CA32D2151F17B0012C46B /* NES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495CA3302151F17B0012C46B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		495CA3352151F17B0012C46B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +101,15 @@
 			path = "Color Selector";
 			sourceTree = "<group>";
 		};
+		492AAD342172A5BE0042EFDB /* Subscription Detail */ = {
+			isa = PBXGroup;
+			children = (
+				492AAD382172A5F80042EFDB /* SubscriptionDetailViewController.xib */,
+				492AAD372172A5F80042EFDB /* SubscriptionDetailViewController.swift */,
+			);
+			path = "Subscription Detail";
+			sourceTree = "<group>";
+		};
 		495CA3242151F17B0012C46B = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +135,7 @@
 				495CA3302151F17B0012C46B /* AppDelegate.swift */,
 				495CA353215201A00012C46B /* Extensions */,
 				495CA356215333240012C46B /* Models */,
+				492AAD342172A5BE0042EFDB /* Subscription Detail */,
 				495CA354215201AC0012C46B /* SubscriptionList */,
 				495CA355215201C10012C46B /* AddSubscription */,
 				495CA3342151F17B0012C46B /* Main.storyboard */,
@@ -277,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492AAD3A2172A5F80042EFDB /* SubscriptionDetailViewController.xib in Resources */,
 				49907F4E21561E9B0059D634 /* IconCollectionViewCell.xib in Resources */,
 				49907F4B2155F5AE0059D634 /* IconSelectorViewController.xib in Resources */,
 				495CA3482151F8CB0012C46B /* SubscriptionTableViewCell.xib in Resources */,
@@ -355,6 +370,7 @@
 				49907F5021561EAF0059D634 /* IconCollectionViewCell.swift in Sources */,
 				49907F492155F59A0059D634 /* IconSelectorViewController.swift in Sources */,
 				495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */,
+				492AAD392172A5F80042EFDB /* SubscriptionDetailViewController.swift in Sources */,
 				495CA36621547AEA0012C46B /* UIColorExtensions.swift in Sources */,
 				495CA35A215333530012C46B /* NewSubscriptionViewController.swift in Sources */,
 				4914CFB7215755EB00B48602 /* ColorSelectorViewController.swift in Sources */,

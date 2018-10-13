@@ -20,6 +20,7 @@ class SubscriptionListViewController: UIViewController {
         navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(settingsButtonPressed)), animated: false)
 
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: String(describing: SubscriptionTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubscriptionTableViewCell.self))
@@ -61,5 +62,12 @@ extension SubscriptionListViewController: UITableViewDataSource {
         cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name, backgroundColor: color, emoji: sub.emojiIcon))
 
         return cell
+    }
+}
+
+extension SubscriptionListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = SubscriptionDetailViewController(subscription: SubscriptionManager.instance.getSubscriptionAt(index: indexPath.row))
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
