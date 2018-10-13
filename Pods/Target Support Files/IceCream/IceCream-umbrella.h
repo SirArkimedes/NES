@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "IceCream.h"
 
 FOUNDATION_EXPORT double IceCreamVersionNumber;
 FOUNDATION_EXPORT const unsigned char IceCreamVersionString[];

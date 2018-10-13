@@ -70,9 +70,9 @@ public final class SyncEngine {
                         syncObject.registerLocalDatabase()
                     }
                 }
-                
+              
                 #if os(iOS) || os(tvOS)
-                
+              
                 NotificationCenter.default.addObserver(self, selector: #selector(`self`.cleanUp), name: UIApplication.willTerminateNotification, object: nil)
                 
                 #elseif os(macOS)
@@ -337,7 +337,7 @@ extension SyncEngine {
     /// For more about the savePolicy: https://developer.apple.com/documentation/cloudkit/ckrecordsavepolicy
     public func syncRecordsToCloudKit(recordsToStore: [CKRecord], recordIDsToDelete: [CKRecord.ID], completion: ((Error?) -> ())? = nil) {
         let modifyOpe = CKModifyRecordsOperation(recordsToSave: recordsToStore, recordIDsToDelete: recordIDsToDelete)
-        
+      
         if #available(iOS 11.0, OSX 10.13, tvOS 11.0, watchOS 4.0, *) {
             let config = CKOperation.Configuration()
             config.isLongLived = true

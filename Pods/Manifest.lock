@@ -1,5 +1,5 @@
 PODS:
-  - IceCream (1.6.0):
+  - IceCream (1.7.0):
     - RealmSwift
   - Pulley (2.5.0)
   - Realm (3.10.0):
@@ -14,13 +14,14 @@ PODS:
   - Smile (1.3.0)
 
 DEPENDENCIES:
-  - "IceCream (from `git@github.com:SirArkimedes/IceCream.git`)"
+  - IceCream (~> 1.7.0)
   - Pulley (~> 2.5.0)
   - RxRealm (~> 0.7.5)
   - Smile (~> 1.3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - IceCream
     - Pulley
     - Realm
     - RealmSwift
@@ -28,17 +29,8 @@ SPEC REPOS:
     - RxSwift
     - Smile
 
-EXTERNAL SOURCES:
-  IceCream:
-    :git: "git@github.com:SirArkimedes/IceCream.git"
-
-CHECKOUT OPTIONS:
-  IceCream:
-    :commit: 90d32252ab2b6a8f63c740ae7d39bba5a387fb33
-    :git: "git@github.com:SirArkimedes/IceCream.git"
-
 SPEC CHECKSUMS:
-  IceCream: e1fc8ecfd19c7480018ead3c809d5f94f2291096
+  IceCream: 2d882e4a7776fae9b8fa1dc49120dc386bf84aff
   Pulley: cd351f605ec2e7412c69d39313c49f99dd1f97c1
   Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
   RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
@@ -46,6 +38,6 @@ SPEC CHECKSUMS:
   RxSwift: a9717a34df3179fe63563f76e046ad345078dd3a
   Smile: 5e0094b5431fd2f4224426f2446ac4d69a8beb38
 
-PODFILE CHECKSUM: 58751229b0e05a9acc0ad0d5b6d06665732c815d
+PODFILE CHECKSUM: 53f712ac27eb5ad85816bb356c9f68eb21ba523b
 
 COCOAPODS: 1.5.3
