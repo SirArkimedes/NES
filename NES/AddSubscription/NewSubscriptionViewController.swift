@@ -192,17 +192,6 @@ extension NewSubscriptionViewController: UITextFieldDelegate {
     }
 }
 
-extension NewSubscriptionViewController: IconSelectorViewControllerDelegate {
-    func didSelectIcon(icon: String) {
-        iconLabel.text = ""
-    }
-
-    func didSelectEmoji(emoji: String) {
-        iconLabel.text = ""
-        emojiLabel.text = emoji
-    }
-}
-
 extension NewSubscriptionViewController: ColorSelectorViewControllerDelegate {
     func didSelect(color: SubDefaultColors) {
         chosenSubColor = color
