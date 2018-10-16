@@ -103,7 +103,7 @@ class NewSubscriptionViewController: UIViewController {
     }
 
     @objc private func cancel() {
-        presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func iconButtonPressed(_ sender: UIButton) {

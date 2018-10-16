@@ -44,7 +44,9 @@ class SubscriptionListViewController: UIViewController {
     }
 
     @objc private func addButtonPressed() {
-        present(AddSubListViewController(), animated: true, completion: nil)
+        let vc = NewSubscriptionViewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        present(nvc, animated: true, completion: nil)
     }
 
 }
