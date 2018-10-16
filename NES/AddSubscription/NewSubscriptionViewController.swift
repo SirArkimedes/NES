@@ -85,9 +85,10 @@ class NewSubscriptionViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func createButtonPressed(_ sender: UIButton) {
-        if let name = titleTextField.text, let cost = costTextField.text, name != "", cost != "" {
+        if let name = titleTextField.text, let costText = costTextField.text, name != "", costText != "", let cost = Double(costText) {
             let new = Subscription()
             new.name = name
+            new.cost = cost
             new.colorRed = chosenSubColor.getRed()
             new.colorGreen = chosenSubColor.getGreen()
             new.colorBlue = chosenSubColor.getBlue()
