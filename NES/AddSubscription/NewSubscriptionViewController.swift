@@ -26,6 +26,8 @@ class NewSubscriptionViewController: UIViewController {
     @IBOutlet weak var moreColorsView: UIView!
     @IBOutlet weak var moreColorsButton: UIButton!
 
+    @IBOutlet weak var costTextField: UITextField!
+    
     private var chosenSubColor: SubDefaultColors = .white {
         didSet {
             UIView.animate(withDuration: 0.25) {
@@ -73,15 +75,20 @@ class NewSubscriptionViewController: UIViewController {
         rightColorButton.layer.borderWidth = 2.0
         rightColorButton.layer.borderColor = UIColor.white.cgColor
 
+        costTextField.roundCorners(radius: 10.0)
+        costTextField.backgroundColor = .clear
+        costTextField.delegate = self
+
         setColors()
     }
 
     // MARK: - Actions
 
     @IBAction func createButtonPressed(_ sender: UIButton) {
-        if let name = titleTextField.text, name != "" {
+        if let name = titleTextField.text, let costText = costTextField.text, name != "", costText != "", let cost = Double(costText) {
             let new = Subscription()
             new.name = name
+            new.cost = cost
             new.colorRed = chosenSubColor.getRed()
             new.colorGreen = chosenSubColor.getGreen()
             new.colorBlue = chosenSubColor.getBlue()
@@ -92,7 +99,6 @@ class NewSubscriptionViewController: UIViewController {
 
             SubscriptionManager.instance.addSubscription(subscription: new)
             cancel()
-        } else {
         }
     }
 
@@ -133,7 +139,7 @@ class NewSubscriptionViewController: UIViewController {
 
     // MARK: - Helpers
 
-    private func setColors() { // This is colors that can be animated.
+    private func setColors() { // These are colors that can be animated.
         navigationController?.navigationBar.barTintColor = chosenColor
         navigationController?.navigationBar.tintColor = chosenColor.oppositeColorBasedOnBrightness()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness()]
@@ -148,8 +154,43 @@ class NewSubscriptionViewController: UIViewController {
 
         moreColorsView.backgroundColor = chosenSubColor == .black ? UIColor.lightGray.withAlphaComponent(0.5) : chosenSubColor.color.darker(negative: 30).withAlphaComponent(0.5)
         moreColorsButton.setTitleColor(chosenSubColor.color.oppositeColorBasedOnBrightness(), for: .normal)
+
+        costTextField.attributedPlaceholder = NSAttributedString(string: "$0.00", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
+        costTextField.textColor = chosenSubColor.color.oppositeColorBasedOnBrightness()
     }
 
+}
+
+extension NewSubscriptionViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        // Can't have a period as first character...
+        if (textField.text ?? "").isEmpty && string.contains(".") {
+            return false
+        }
+
+        // Can't have repeating decimals. (Ex: "....")
+        if string == "." && textField.text?.last == "." {
+            return false
+        }
+
+        let newText = textField.text ?? "" + string
+        let elements = newText.split(separator: ".")
+
+        // Only two digts after decimal...
+        if newText.contains(".") {
+            if elements.count > 1 && elements[1].count > 1 && string != "" {
+                return false
+            }
+        }
+
+        // Check for 10 digits...
+        if elements.count > 0 && elements[0].count > 10 && string != "" {
+            return false
+        }
+
+        return true
+    }
 }
 
 extension NewSubscriptionViewController: IconSelectorViewControllerDelegate {

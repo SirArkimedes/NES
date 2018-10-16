@@ -59,7 +59,7 @@ extension SubscriptionListViewController: UITableViewDataSource {
 
         let sub = SubscriptionManager.instance.getSubscriptionAt(index: indexPath.row)
         let color = UIColor.color(red: sub.colorRed, green: sub.colorGreen, blue: sub.colorBlue)
-        cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name, backgroundColor: color, emoji: sub.emojiIcon))
+        cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name, cost: sub.cost, backgroundColor: color, emoji: sub.emojiIcon))
 
         return cell
     }
