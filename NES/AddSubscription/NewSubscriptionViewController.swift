@@ -107,8 +107,7 @@ class NewSubscriptionViewController: UIViewController {
     }
     
     @IBAction func iconButtonPressed(_ sender: UIButton) {
-        let vc = IconSelectorViewController(color: chosenSubColor, currentlySetEmoji: emojiLabel.text, delegate: self)
-        navigationController?.pushViewController(vc, animated: true)
+        moreColorsButtonPressed(sender)
     }
 
     @IBAction func leftColorButtonPressed(_ sender: UIButton) {

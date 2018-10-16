@@ -39,7 +39,6 @@ class ColorAndIconShowViewController: UIViewController {
         previewEmojiLabel.text = currentlySetEmoji ?? "❔"
 
         setColors()
-        
     }
 
     // MARK: - Actions
