@@ -107,7 +107,7 @@ class NewSubscriptionViewController: UIViewController {
     }
     
     @IBAction func iconButtonPressed(_ sender: UIButton) {
-        moreColorsButtonPressed(sender)
+        openColorSelector(for: .emoji)
     }
 
     @IBAction func leftColorButtonPressed(_ sender: UIButton) {
@@ -123,17 +123,7 @@ class NewSubscriptionViewController: UIViewController {
     }
     
     @IBAction func moreColorsButtonPressed(_ sender: UIButton) {
-        let selector = ColorSelectorViewController(color: chosenSubColor)
-        let back = ColorAndIconShowViewController(color: chosenSubColor, currentlySetEmoji: emojiLabel.text)
-        let nvc = UINavigationController(rootViewController: back)
-
-        selector.add(delegate: back)
-        selector.add(delegate: self)
-
-        let pulley = PulleyViewController(contentViewController: nvc, drawerViewController: selector)
-        pulley.initialDrawerPosition = .partiallyRevealed
-
-        present(pulley, animated: true, completion: nil)
+        openColorSelector(for: .color)
     }
 
     // MARK: - Helpers
@@ -156,6 +146,20 @@ class NewSubscriptionViewController: UIViewController {
 
         costTextField.attributedPlaceholder = NSAttributedString(string: "$0.00", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
         costTextField.textColor = chosenSubColor.color.oppositeColorBasedOnBrightness()
+    }
+
+    private func openColorSelector(for choice: ColorSelectorViewController.Segment) {
+        let selector = ColorSelectorViewController(color: chosenSubColor, displaySegment: choice)
+        let back = ColorAndIconShowViewController(color: chosenSubColor, currentlySetEmoji: emojiLabel.text)
+        let nvc = UINavigationController(rootViewController: back)
+
+        selector.add(delegate: back)
+        selector.add(delegate: self)
+
+        let pulley = PulleyViewController(contentViewController: nvc, drawerViewController: selector)
+        pulley.initialDrawerPosition = .partiallyRevealed
+
+        present(pulley, animated: true, completion: nil)
     }
 
 }

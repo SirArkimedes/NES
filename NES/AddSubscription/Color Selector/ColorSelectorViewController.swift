@@ -36,8 +36,9 @@ class ColorSelectorViewController: UIViewController {
     private let emojiCategories = Smile.emojiCategories
     private var emojiInOrder = [String]()
 
-    init(color: SubDefaultColors) {
+    init(color: SubDefaultColors, displaySegment: Segment) {
         subColor = color
+        currentlySelectedSegment = displaySegment
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -68,6 +69,12 @@ class ColorSelectorViewController: UIViewController {
         emojiInOrder.append(contentsOf: emojiCategories["objects"]!)
         emojiInOrder.append(contentsOf: emojiCategories["symbols"]!)
         emojiInOrder.append(contentsOf: emojiCategories["flags"]!)
+
+        if currentlySelectedSegment == .emoji {
+            segmentControl.selectedSegmentIndex = 1
+        } else if currentlySelectedSegment == .icon {
+            segmentControl.selectedSegmentIndex = 2
+        }
 
         setColors()
     }
