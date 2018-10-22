@@ -11,7 +11,8 @@ import UIKit
 class SubscriptionListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var totalCostLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Subscriptions"
@@ -27,8 +28,12 @@ class SubscriptionListViewController: UIViewController {
 
         tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: view.safeAreaInsets.bottom, right: 0.0)
 
+        let bottomView = createSafeAreaSpacerView()
+        bottomView.backgroundColor = .white
+
         SubscriptionManager.instance.bind {
             self.tableView.reloadData()
+            self.updateTotal()
         }
     }
 
@@ -49,6 +54,12 @@ class SubscriptionListViewController: UIViewController {
         present(nvc, animated: true, completion: nil)
     }
 
+    // MARK: - Helpers
+
+    private func updateTotal() {
+        totalCostLabel.text = SubscriptionManager.instance.getMonthlyCost().displayedAsCurrency()
+    }
+
 }
 
 extension SubscriptionListViewController: UITableViewDataSource {
@@ -61,7 +72,7 @@ extension SubscriptionListViewController: UITableViewDataSource {
 
         let sub = SubscriptionManager.instance.getSubscriptionAt(index: indexPath.row)
         let color = UIColor.color(red: sub.colorRed, green: sub.colorGreen, blue: sub.colorBlue)
-        cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name, description: sub.descriptionText, cost: sub.cost, backgroundColor: color, emoji: sub.emojiIcon, occurenceCycle: sub.occurenceCycle, occurencePeriod: sub.occurencePeriod))
+        cell.configure(with: SubscriptionTableViewCell.ViewModel(title: sub.name, description: sub.descriptionText, cost: sub.cost, backgroundColor: color, emoji: sub.emojiIcon, occurrenceCycle: sub.occurrenceCycle, occurrencePeriod: sub.occurrencePeriod))
 
         return cell
     }

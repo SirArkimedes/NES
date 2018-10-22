@@ -23,10 +23,10 @@
                 <outlet property="middleColorButton" destination="oJS-Ry-Q6z" id="xUd-wr-2gE"/>
                 <outlet property="moreColorsButton" destination="87S-dp-v9r" id="xLA-9a-6B8"/>
                 <outlet property="moreColorsView" destination="kt4-z0-EdR" id="Swi-dn-DdY"/>
-                <outlet property="occurenceChoiceLabel" destination="HgO-6D-bym" id="dBX-VO-bgh"/>
-                <outlet property="occurencePicker" destination="oVA-2O-tlu" id="d7g-mP-Tje"/>
-                <outlet property="occurencePickerHeight" destination="7ap-ZD-3ez" id="794-Wf-NCr"/>
-                <outlet property="occurenceSectionLabel" destination="Ufj-ps-ZFt" id="HJX-9D-XT9"/>
+                <outlet property="occurrenceChoiceLabel" destination="HgO-6D-bym" id="dBX-VO-bgh"/>
+                <outlet property="occurrencePicker" destination="oVA-2O-tlu" id="d7g-mP-Tje"/>
+                <outlet property="occurrencePickerHeight" destination="7ap-ZD-3ez" id="794-Wf-NCr"/>
+                <outlet property="occurrenceSectionLabel" destination="Ufj-ps-ZFt" id="HJX-9D-XT9"/>
                 <outlet property="rightColorButton" destination="uTg-Or-dkZ" id="caV-eB-Ldo"/>
                 <outlet property="scrollView" destination="gLJ-Ve-al0" id="d7Y-33-2z9"/>
                 <outlet property="titleTextField" destination="Wm7-ib-8yG" id="DeB-9f-vad"/>
@@ -146,12 +146,12 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bu-uC-lXk">
                                     <rect key="frame" x="0.0" y="278" width="375" height="53"/>
                                     <connections>
-                                        <action selector="occurenceButtonPressed:" destination="-1" eventType="touchUpInside" id="7ni-Wu-XeO"/>
+                                        <action selector="occurrenceButtonPressed:" destination="-1" eventType="touchUpInside" id="7ni-Wu-XeO"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occurance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufj-ps-ZFt">
-                                    <rect key="frame" x="16" y="294" width="87" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occurrence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufj-ps-ZFt">
+                                    <rect key="frame" x="16" y="294" width="96" height="21"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>

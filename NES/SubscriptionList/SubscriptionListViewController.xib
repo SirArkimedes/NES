@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubscriptionListViewController" customModule="NES" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="Pc3-EH-pVR" id="jC0-8I-SEU"/>
+                <outlet property="totalCostLabel" destination="wc9-Ie-hFI" id="dN4-0C-k2C"/>
                 <outlet property="view" destination="iN0-l3-epB" id="65p-Ez-zCO"/>
             </connections>
         </placeholder>
@@ -22,15 +23,43 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pc3-EH-pVR">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAc-mI-ADo">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Per month total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMC-uh-nue">
+                            <rect key="frame" x="16" y="15" width="120.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc9-Ie-hFI">
+                            <rect key="frame" x="311.5" y="14.5" width="47.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="wc9-Ie-hFI" secondAttribute="trailing" constant="16" id="CbQ-1A-neJ"/>
+                        <constraint firstItem="SMC-uh-nue" firstAttribute="leading" secondItem="ZAc-mI-ADo" secondAttribute="leading" constant="16" id="GHl-eG-ViI"/>
+                        <constraint firstItem="SMC-uh-nue" firstAttribute="centerY" secondItem="ZAc-mI-ADo" secondAttribute="centerY" id="ZrE-U6-8BR"/>
+                        <constraint firstItem="wc9-Ie-hFI" firstAttribute="centerY" secondItem="ZAc-mI-ADo" secondAttribute="centerY" id="dMT-lt-Wga"/>
+                        <constraint firstAttribute="height" constant="50" id="eku-g1-GNI"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pc3-EH-pVR" secondAttribute="trailing" id="6qJ-zJ-yO9"/>
+                <constraint firstItem="ZAc-mI-ADo" firstAttribute="top" secondItem="Pc3-EH-pVR" secondAttribute="bottom" id="BqH-xm-kBG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Pc3-EH-pVR" secondAttribute="top" constant="20" id="HdD-wd-mPO"/>
-                <constraint firstItem="Pc3-EH-pVR" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="eXw-vg-ibJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="ZAc-mI-ADo" secondAttribute="leading" id="IaN-De-1aj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZAc-mI-ADo" secondAttribute="trailing" id="Rcc-79-ase"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZAc-mI-ADo" secondAttribute="bottom" id="Yyg-4r-FkU"/>
                 <constraint firstItem="Pc3-EH-pVR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ib0-jQ-rsP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

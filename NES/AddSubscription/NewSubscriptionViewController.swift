@@ -28,10 +28,10 @@ class NewSubscriptionViewController: UIViewController {
 
     @IBOutlet weak var costTextField: UITextField!
 
-    @IBOutlet weak var occurenceSectionLabel: UILabel!
-    @IBOutlet weak var occurenceChoiceLabel: UILabel!
-    @IBOutlet weak var occurencePicker: UIPickerView!
-    @IBOutlet weak var occurencePickerHeight: NSLayoutConstraint!
+    @IBOutlet weak var occurrenceSectionLabel: UILabel!
+    @IBOutlet weak var occurrenceChoiceLabel: UILabel!
+    @IBOutlet weak var occurrencePicker: UIPickerView!
+    @IBOutlet weak var occurrencePickerHeight: NSLayoutConstraint!
 
     @IBOutlet weak var descriptionSectionLabel: UILabel!
     @IBOutlet weak var descriptionTextField: UITextField!
@@ -87,10 +87,10 @@ class NewSubscriptionViewController: UIViewController {
         costTextField.backgroundColor = .clear
         costTextField.delegate = self
 
-        occurenceChoiceLabel.text = "Every 1 month"
-        occurencePicker.delegate = self
-        occurencePicker.dataSource = self
-        occurencePickerHeight.constant = 0.0
+        occurrenceChoiceLabel.text = "Every 1 month"
+        occurrencePicker.delegate = self
+        occurrencePicker.dataSource = self
+        occurrencePickerHeight.constant = 0.0
 
         setColors()
 
@@ -107,8 +107,8 @@ class NewSubscriptionViewController: UIViewController {
             new.colorRed = chosenSubColor.getRed()
             new.colorGreen = chosenSubColor.getGreen()
             new.colorBlue = chosenSubColor.getBlue()
-            new.occurencePeriod = occurencePicker.selectedRow(inComponent: 0) + 1
-            new.occurenceCycle = OccurenceCycle(rawValue: occurencePicker.selectedRow(inComponent: 1))!
+            new.occurrencePeriod = occurrencePicker.selectedRow(inComponent: 0) + 1
+            new.occurrenceCycle = OccurrenceCycle(rawValue: occurrencePicker.selectedRow(inComponent: 1))!
 
             if let description = descriptionTextField.text {
                 new.descriptionText = description
@@ -146,8 +146,8 @@ class NewSubscriptionViewController: UIViewController {
         openColorSelector(for: .color)
     }
 
-    @IBAction func occurenceButtonPressed(_ sender: UIButton) {
-        occurencePickerHeight.constant = 182.0
+    @IBAction func occurrenceButtonPressed(_ sender: UIButton) {
+        occurrencePickerHeight.constant = 182.0
         UIView.animate(withDuration: 0.25) {
             self.view.layoutIfNeeded()
         }
@@ -174,9 +174,9 @@ class NewSubscriptionViewController: UIViewController {
         costTextField.attributedPlaceholder = NSAttributedString(string: "$0.00", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
         costTextField.textColor = chosenSubColor.color.oppositeColorBasedOnBrightness()
 
-        occurenceSectionLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
-        occurenceChoiceLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
-        occurencePicker.reloadAllComponents()
+        occurrenceSectionLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        occurrenceChoiceLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        occurrencePicker.reloadAllComponents()
 
         descriptionSectionLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
         descriptionTextField.attributedPlaceholder = NSAttributedString(string: "It's empty...", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
@@ -299,6 +299,6 @@ extension NewSubscriptionViewController: UIPickerViewDelegate {
             builder += "month"
         }
 
-        occurenceChoiceLabel.text = pickerView.selectedRow(inComponent: 0) == 0 ? builder : "\(builder)s"
+        occurrenceChoiceLabel.text = pickerView.selectedRow(inComponent: 0) == 0 ? builder : "\(builder)s"
     }
 }
