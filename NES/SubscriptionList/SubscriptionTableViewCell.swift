@@ -14,11 +14,14 @@ class SubscriptionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var occurenceLabel: UILabel!
 
     struct ViewModel {
         let title: String
+        let description: String?
         let cost: Double
         let backgroundColor: UIColor
         let emoji: String?
@@ -41,6 +44,14 @@ class SubscriptionTableViewCell: UITableViewCell {
 
         titleLabel.text = viewModel.title
         titleLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
+
+        if let description = viewModel.description {
+            descriptionLabel.text = description
+            descriptionLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
+            descriptionLabel.isHidden = false
+        } else {
+            descriptionLabel.isHidden = true
+        }
 
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
