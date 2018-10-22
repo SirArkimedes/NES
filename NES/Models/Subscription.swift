@@ -108,6 +108,12 @@ enum SubDefaultColors {
     }
 }
 
+enum OccurenceCycle: Int {
+    case month
+    case year
+    case day
+}
+
 class Subscription: Object {
     @objc dynamic var id = NSUUID().uuidString
     @objc dynamic var name = ""
