@@ -117,6 +117,7 @@ enum OccurrenceCycle: Int {
 class Subscription: Object {
     @objc dynamic var id = NSUUID().uuidString
     @objc dynamic var name = ""
+    @objc dynamic var descriptionText: String?
     @objc dynamic var cost = 0.0
     @objc dynamic var deleted = false
 

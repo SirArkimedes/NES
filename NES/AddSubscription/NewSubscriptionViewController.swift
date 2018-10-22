@@ -33,6 +33,9 @@ class NewSubscriptionViewController: UIViewController {
     @IBOutlet weak var occurrencePicker: UIPickerView!
     @IBOutlet weak var occurrencePickerHeight: NSLayoutConstraint!
 
+    @IBOutlet weak var descriptionSectionLabel: UILabel!
+    @IBOutlet weak var descriptionTextField: UITextField!
+
     private var chosenSubColor: SubDefaultColors = .white {
         didSet {
             UIView.animate(withDuration: 0.25) {
@@ -90,6 +93,8 @@ class NewSubscriptionViewController: UIViewController {
         occurrencePickerHeight.constant = 0.0
 
         setColors()
+
+        view.hideKeyboardWhenTappedAround()
     }
 
     // MARK: - Actions
@@ -105,6 +110,9 @@ class NewSubscriptionViewController: UIViewController {
             new.occurrencePeriod = occurrencePicker.selectedRow(inComponent: 0) + 1
             new.occurrenceCycle = OccurrenceCycle(rawValue: occurrencePicker.selectedRow(inComponent: 1))!
 
+            if let description = descriptionTextField.text {
+                new.descriptionText = description
+            }
             if let emoji = emojiLabel.text {
                 new.emojiIcon = emoji
             }
@@ -166,9 +174,13 @@ class NewSubscriptionViewController: UIViewController {
         costTextField.attributedPlaceholder = NSAttributedString(string: "$0.00", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
         costTextField.textColor = chosenSubColor.color.oppositeColorBasedOnBrightness()
 
-        occurrenceChoiceLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
         occurrenceSectionLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        occurrenceChoiceLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
         occurrencePicker.reloadAllComponents()
+
+        descriptionSectionLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        descriptionTextField.attributedPlaceholder = NSAttributedString(string: "It's empty...", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
+        descriptionTextField.textColor = chosenColor.oppositeColorBasedOnBrightness()
     }
 
     private func openColorSelector(for choice: ColorSelectorViewController.Segment) {
