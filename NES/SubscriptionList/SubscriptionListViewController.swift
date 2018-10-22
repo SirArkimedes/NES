@@ -11,7 +11,8 @@ import UIKit
 class SubscriptionListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var totalCostLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Subscriptions"
@@ -27,8 +28,12 @@ class SubscriptionListViewController: UIViewController {
 
         tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: view.safeAreaInsets.bottom, right: 0.0)
 
+        let bottomView = createSafeAreaSpacerView()
+        bottomView.backgroundColor = .white
+
         SubscriptionManager.instance.bind {
             self.tableView.reloadData()
+            self.updateTotal()
         }
     }
 
@@ -47,6 +52,15 @@ class SubscriptionListViewController: UIViewController {
         let vc = NewSubscriptionViewController()
         let nvc = UINavigationController(rootViewController: vc)
         present(nvc, animated: true, completion: nil)
+    }
+
+    // MARK: - Helpers
+
+    private func updateTotal() {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        let costFormatted = formatter.string(from: 1.0 as NSNumber)
+        totalCostLabel.text = costFormatted
     }
 
 }
