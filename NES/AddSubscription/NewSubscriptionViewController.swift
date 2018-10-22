@@ -33,6 +33,9 @@ class NewSubscriptionViewController: UIViewController {
     @IBOutlet weak var occurencePicker: UIPickerView!
     @IBOutlet weak var occurencePickerHeight: NSLayoutConstraint!
 
+    @IBOutlet weak var descriptionSectionLabel: UILabel!
+    @IBOutlet weak var descriptionTextField: UITextField!
+
     private var chosenSubColor: SubDefaultColors = .white {
         didSet {
             UIView.animate(withDuration: 0.25) {
@@ -166,9 +169,13 @@ class NewSubscriptionViewController: UIViewController {
         costTextField.attributedPlaceholder = NSAttributedString(string: "$0.00", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
         costTextField.textColor = chosenSubColor.color.oppositeColorBasedOnBrightness()
 
-        occurenceChoiceLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
         occurenceSectionLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        occurenceChoiceLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
         occurencePicker.reloadAllComponents()
+
+        descriptionSectionLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        descriptionTextField.attributedPlaceholder = NSAttributedString(string: "It's empty...", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
+        descriptionTextField.textColor = chosenColor.oppositeColorBasedOnBrightness()
     }
 
     private func openColorSelector(for choice: ColorSelectorViewController.Segment) {
