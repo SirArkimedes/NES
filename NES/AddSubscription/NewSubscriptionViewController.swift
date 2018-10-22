@@ -27,7 +27,12 @@ class NewSubscriptionViewController: UIViewController {
     @IBOutlet weak var moreColorsButton: UIButton!
 
     @IBOutlet weak var costTextField: UITextField!
-    
+
+    @IBOutlet weak var occurrenceSectionLabel: UILabel!
+    @IBOutlet weak var occurrenceChoiceLabel: UILabel!
+    @IBOutlet weak var occurrencePicker: UIPickerView!
+    @IBOutlet weak var occurrencePickerHeight: NSLayoutConstraint!
+
     private var chosenSubColor: SubDefaultColors = .white {
         didSet {
             UIView.animate(withDuration: 0.25) {
@@ -79,6 +84,11 @@ class NewSubscriptionViewController: UIViewController {
         costTextField.backgroundColor = .clear
         costTextField.delegate = self
 
+        occurrenceChoiceLabel.text = "Every 1 month"
+        occurrencePicker.delegate = self
+        occurrencePicker.dataSource = self
+        occurrencePickerHeight.constant = 0.0
+
         setColors()
     }
 
@@ -92,6 +102,8 @@ class NewSubscriptionViewController: UIViewController {
             new.colorRed = chosenSubColor.getRed()
             new.colorGreen = chosenSubColor.getGreen()
             new.colorBlue = chosenSubColor.getBlue()
+            new.occurrencePeriod = occurrencePicker.selectedRow(inComponent: 0) + 1
+            new.occurrenceCycle = OccurrenceCycle(rawValue: occurrencePicker.selectedRow(inComponent: 1))!
 
             if let emoji = emojiLabel.text {
                 new.emojiIcon = emoji
@@ -126,6 +138,13 @@ class NewSubscriptionViewController: UIViewController {
         openColorSelector(for: .color)
     }
 
+    @IBAction func occurrenceButtonPressed(_ sender: UIButton) {
+        occurrencePickerHeight.constant = 182.0
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
     // MARK: - Helpers
 
     private func setColors() { // These are colors that can be animated.
@@ -146,6 +165,10 @@ class NewSubscriptionViewController: UIViewController {
 
         costTextField.attributedPlaceholder = NSAttributedString(string: "$0.00", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
         costTextField.textColor = chosenSubColor.color.oppositeColorBasedOnBrightness()
+
+        occurrenceChoiceLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        occurrenceSectionLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        occurrencePicker.reloadAllComponents()
     }
 
     private func openColorSelector(for choice: ColorSelectorViewController.Segment) {
@@ -205,5 +228,65 @@ extension NewSubscriptionViewController: ColorSelectorViewControllerDelegate {
     func didSelect(emoji: String) {
         iconLabel.text = ""
         emojiLabel.text = emoji
+    }
+}
+
+extension NewSubscriptionViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 1 {
+            return 3
+        }
+
+        return 30
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 1 {
+            switch row {
+            case 1:
+                return "Year(s)"
+            case 2:
+                return "Day(s)"
+            default:
+                return "Month(s)"
+            }
+        }
+
+        return "\(row + 1)"
+    }
+
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        var title = "\(row + 1)"
+        if component == 1 {
+            switch row {
+            case 1:
+                title = "Year(s)"
+            case 2:
+                title = "Day(s)"
+            default:
+                title = "Month(s)"
+            }
+        }
+        return NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness()])
+    }
+}
+
+extension NewSubscriptionViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        var builder = "Every \(pickerView.selectedRow(inComponent: 0) + 1) "
+        switch pickerView.selectedRow(inComponent: 1) {
+        case 1:
+            builder += "year"
+        case 2:
+            builder += "day"
+        default:
+            builder += "month"
+        }
+
+        occurrenceChoiceLabel.text = pickerView.selectedRow(inComponent: 0) == 0 ? builder : "\(builder)s"
     }
 }

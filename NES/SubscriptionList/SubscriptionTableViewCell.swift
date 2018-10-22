@@ -15,12 +15,15 @@ class SubscriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
-    
+    @IBOutlet weak var occurrenceLabel: UILabel!
+
     struct ViewModel {
         let title: String
         let cost: Double
         let backgroundColor: UIColor
         let emoji: String?
+        let occurrenceCycle: OccurrenceCycle
+        let occurrencePeriod: Int
     }
 
     override func awakeFromNib() {
@@ -44,6 +47,28 @@ class SubscriptionTableViewCell: UITableViewCell {
         let costFormatted = formatter.string(from: viewModel.cost as NSNumber)
         costLabel.text = costFormatted
         costLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
+
+        switch viewModel.occurrenceCycle {
+        case .month:
+            if viewModel.occurrencePeriod == 1 {
+                occurrenceLabel.text = "/ month"
+            } else {
+                occurrenceLabel.text = "Every \(viewModel.occurrencePeriod) months"
+            }
+        case .year:
+            if viewModel.occurrencePeriod == 1 {
+                occurrenceLabel.text = "/ year"
+            } else {
+                occurrenceLabel.text = "Every \(viewModel.occurrencePeriod) years"
+            }
+        case .day:
+            if viewModel.occurrencePeriod == 1 {
+                occurrenceLabel.text = "/ day"
+            } else {
+                occurrenceLabel.text = "Every \(viewModel.occurrencePeriod) days"
+            }
+        }
+        occurrenceLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
 
         if let emoji = viewModel.emoji {
             emojiLabel.text = emoji

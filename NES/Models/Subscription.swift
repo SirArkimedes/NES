@@ -108,6 +108,12 @@ enum SubDefaultColors {
     }
 }
 
+enum OccurrenceCycle: Int {
+    case month
+    case year
+    case day
+}
+
 class Subscription: Object {
     @objc dynamic var id = NSUUID().uuidString
     @objc dynamic var name = ""
@@ -120,8 +126,19 @@ class Subscription: Object {
     @objc dynamic var colorGreen = 255
     @objc dynamic var colorBlue = 255
 
+    @objc dynamic var occurrencePeriod = 0
+    @objc private dynamic var privateOccurrenceCycle = OccurrenceCycle.month.rawValue
+    var occurrenceCycle: OccurrenceCycle {
+        get { return OccurrenceCycle(rawValue: privateOccurrenceCycle)! }
+        set { privateOccurrenceCycle = newValue.rawValue }
+    }
+
     override class func primaryKey() -> String? {
         return "id"
+    }
+
+    override class func ignoredProperties() -> [String] {
+        return ["occurrenceCycle"]
     }
 }
 
