@@ -42,10 +42,7 @@ class SubscriptionTableViewCell: UITableViewCell {
         titleLabel.text = viewModel.title
         titleLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
 
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        let costFormatted = formatter.string(from: viewModel.cost as NSNumber)
-        costLabel.text = costFormatted
+        costLabel.text = viewModel.cost.displayedAsCurrency()
         costLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
 
         switch viewModel.occurrenceCycle {
