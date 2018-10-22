@@ -24,6 +24,7 @@
                 <outlet property="occurenceChoiceLabel" destination="HgO-6D-bym" id="dBX-VO-bgh"/>
                 <outlet property="occurencePicker" destination="oVA-2O-tlu" id="d7g-mP-Tje"/>
                 <outlet property="occurencePickerHeight" destination="7ap-ZD-3ez" id="794-Wf-NCr"/>
+                <outlet property="occurenceSectionLabel" destination="Ufj-ps-ZFt" id="HJX-9D-XT9"/>
                 <outlet property="rightColorButton" destination="uTg-Or-dkZ" id="caV-eB-Ldo"/>
                 <outlet property="scrollView" destination="gLJ-Ve-al0" id="d7Y-33-2z9"/>
                 <outlet property="titleTextField" destination="Wm7-ib-8yG" id="DeB-9f-vad"/>

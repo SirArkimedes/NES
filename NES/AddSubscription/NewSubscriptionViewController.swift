@@ -28,6 +28,7 @@ class NewSubscriptionViewController: UIViewController {
 
     @IBOutlet weak var costTextField: UITextField!
 
+    @IBOutlet weak var occurenceSectionLabel: UILabel!
     @IBOutlet weak var occurenceChoiceLabel: UILabel!
     @IBOutlet weak var occurencePicker: UIPickerView!
     @IBOutlet weak var occurencePickerHeight: NSLayoutConstraint!
@@ -164,6 +165,10 @@ class NewSubscriptionViewController: UIViewController {
 
         costTextField.attributedPlaceholder = NSAttributedString(string: "$0.00", attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness().withAlphaComponent(0.5)])
         costTextField.textColor = chosenSubColor.color.oppositeColorBasedOnBrightness()
+
+        occurenceChoiceLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        occurenceSectionLabel.textColor = chosenColor.oppositeColorBasedOnBrightness()
+        occurencePicker.reloadAllComponents()
     }
 
     private func openColorSelector(for choice: ColorSelectorViewController.Segment) {
@@ -252,6 +257,21 @@ extension NewSubscriptionViewController: UIPickerViewDataSource {
         }
 
         return "\(row + 1)"
+    }
+
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        var title = "\(row + 1)"
+        if component == 1 {
+            switch row {
+            case 1:
+                title = "Year(s)"
+            case 2:
+                title = "Day(s)"
+            default:
+                title = "Month(s)"
+            }
+        }
+        return NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: chosenColor.oppositeColorBasedOnBrightness()])
     }
 }
 
