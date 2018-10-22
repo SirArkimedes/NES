@@ -93,6 +93,8 @@ class NewSubscriptionViewController: UIViewController {
         occurencePickerHeight.constant = 0.0
 
         setColors()
+
+        view.hideKeyboardWhenTappedAround()
     }
 
     // MARK: - Actions

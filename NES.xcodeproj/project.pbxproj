@@ -11,6 +11,7 @@
 		4914CFB8215755EB00B48602 /* ColorSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4914CFB6215755EB00B48602 /* ColorSelectorViewController.xib */; };
 		4914CFBB215769C000B48602 /* ColorAndIconShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914CFB9215769C000B48602 /* ColorAndIconShowViewController.swift */; };
 		4914CFBC215769C000B48602 /* ColorAndIconShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4914CFBA215769C000B48602 /* ColorAndIconShowViewController.xib */; };
+		491CD791217D65D900B81C12 /* UIView+TappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491CD790217D65D900B81C12 /* UIView+TappedAround.swift */; };
 		492AAD392172A5F80042EFDB /* SubscriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AAD372172A5F80042EFDB /* SubscriptionDetailViewController.swift */; };
 		492AAD3A2172A5F80042EFDB /* SubscriptionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492AAD382172A5F80042EFDB /* SubscriptionDetailViewController.xib */; };
 		493F19AD21769256002D814A /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F19AB21769256002D814A /* IconCollectionViewCell.swift */; };
@@ -45,6 +46,7 @@
 		4914CFB6215755EB00B48602 /* ColorSelectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorSelectorViewController.xib; sourceTree = "<group>"; };
 		4914CFB9215769C000B48602 /* ColorAndIconShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAndIconShowViewController.swift; sourceTree = "<group>"; };
 		4914CFBA215769C000B48602 /* ColorAndIconShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorAndIconShowViewController.xib; sourceTree = "<group>"; };
+		491CD790217D65D900B81C12 /* UIView+TappedAround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+TappedAround.swift"; sourceTree = "<group>"; };
 		492AAD372172A5F80042EFDB /* SubscriptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionDetailViewController.swift; sourceTree = "<group>"; };
 		492AAD382172A5F80042EFDB /* SubscriptionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionDetailViewController.xib; sourceTree = "<group>"; };
 		493F19AB21769256002D814A /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -148,9 +150,10 @@
 		495CA353215201A00012C46B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */,
-				495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */,
 				495CA36521547AEA0012C46B /* UIColorExtensions.swift */,
+				495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */,
+				495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */,
+				491CD790217D65D900B81C12 /* UIView+TappedAround.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				495CA3582153333A0012C46B /* Subscription.swift in Sources */,
 				495CA3462151F46F0012C46B /* SubscriptionListViewController.swift in Sources */,
 				495CA34C2151FA1F0012C46B /* UIView+RoundedCorners.swift in Sources */,
+				491CD791217D65D900B81C12 /* UIView+TappedAround.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
