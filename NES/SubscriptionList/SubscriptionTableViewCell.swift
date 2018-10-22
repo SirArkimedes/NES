@@ -15,15 +15,15 @@ class SubscriptionTableViewCell: UITableViewCell {
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
-    @IBOutlet weak var occurenceLabel: UILabel!
+    @IBOutlet weak var occurrenceLabel: UILabel!
 
     struct ViewModel {
         let title: String
         let cost: Double
         let backgroundColor: UIColor
         let emoji: String?
-        let occurenceCycle: OccurenceCycle
-        let occurencePeriod: Int
+        let occurrenceCycle: OccurrenceCycle
+        let occurrencePeriod: Int
     }
 
     override func awakeFromNib() {
@@ -48,27 +48,27 @@ class SubscriptionTableViewCell: UITableViewCell {
         costLabel.text = costFormatted
         costLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
 
-        switch viewModel.occurenceCycle {
+        switch viewModel.occurrenceCycle {
         case .month:
-            if viewModel.occurencePeriod == 1 {
-                occurenceLabel.text = "/ month"
+            if viewModel.occurrencePeriod == 1 {
+                occurrenceLabel.text = "/ month"
             } else {
-                occurenceLabel.text = "Every \(viewModel.occurencePeriod) months"
+                occurrenceLabel.text = "Every \(viewModel.occurrencePeriod) months"
             }
         case .year:
-            if viewModel.occurencePeriod == 1 {
-                occurenceLabel.text = "/ year"
+            if viewModel.occurrencePeriod == 1 {
+                occurrenceLabel.text = "/ year"
             } else {
-                occurenceLabel.text = "Every \(viewModel.occurencePeriod) years"
+                occurrenceLabel.text = "Every \(viewModel.occurrencePeriod) years"
             }
         case .day:
-            if viewModel.occurencePeriod == 1 {
-                occurenceLabel.text = "/ day"
+            if viewModel.occurrencePeriod == 1 {
+                occurrenceLabel.text = "/ day"
             } else {
-                occurenceLabel.text = "Every \(viewModel.occurencePeriod) days"
+                occurrenceLabel.text = "Every \(viewModel.occurrencePeriod) days"
             }
         }
-        occurenceLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
+        occurrenceLabel.textColor = viewModel.backgroundColor.oppositeColorBasedOnBrightness()
 
         if let emoji = viewModel.emoji {
             emojiLabel.text = emoji
