@@ -57,10 +57,7 @@ class SubscriptionListViewController: UIViewController {
     // MARK: - Helpers
 
     private func updateTotal() {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        let costFormatted = formatter.string(from: SubscriptionManager.instance.getMonthlyCost() as NSNumber)
-        totalCostLabel.text = costFormatted
+        totalCostLabel.text = SubscriptionManager.instance.getMonthlyCost().displayedAsCurrency()
     }
 
 }

@@ -11,6 +11,7 @@
 		4914CFB8215755EB00B48602 /* ColorSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4914CFB6215755EB00B48602 /* ColorSelectorViewController.xib */; };
 		4914CFBB215769C000B48602 /* ColorAndIconShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914CFB9215769C000B48602 /* ColorAndIconShowViewController.swift */; };
 		4914CFBC215769C000B48602 /* ColorAndIconShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4914CFBA215769C000B48602 /* ColorAndIconShowViewController.xib */; };
+		491CD78F217D5F8900B81C12 /* Double+PriceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491CD78E217D5F8900B81C12 /* Double+PriceFormatter.swift */; };
 		492AAD392172A5F80042EFDB /* SubscriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AAD372172A5F80042EFDB /* SubscriptionDetailViewController.swift */; };
 		492AAD3A2172A5F80042EFDB /* SubscriptionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492AAD382172A5F80042EFDB /* SubscriptionDetailViewController.xib */; };
 		493F19AD21769256002D814A /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F19AB21769256002D814A /* IconCollectionViewCell.swift */; };
@@ -45,6 +46,7 @@
 		4914CFB6215755EB00B48602 /* ColorSelectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorSelectorViewController.xib; sourceTree = "<group>"; };
 		4914CFB9215769C000B48602 /* ColorAndIconShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAndIconShowViewController.swift; sourceTree = "<group>"; };
 		4914CFBA215769C000B48602 /* ColorAndIconShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorAndIconShowViewController.xib; sourceTree = "<group>"; };
+		491CD78E217D5F8900B81C12 /* Double+PriceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+PriceFormatter.swift"; sourceTree = "<group>"; };
 		492AAD372172A5F80042EFDB /* SubscriptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionDetailViewController.swift; sourceTree = "<group>"; };
 		492AAD382172A5F80042EFDB /* SubscriptionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionDetailViewController.xib; sourceTree = "<group>"; };
 		493F19AB21769256002D814A /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				495CA34B2151FA1F0012C46B /* UIView+RoundedCorners.swift */,
 				495CA351215201360012C46B /* UIViewController+SafeAreaSpacers.swift */,
 				495CA36521547AEA0012C46B /* UIColorExtensions.swift */,
+				491CD78E217D5F8900B81C12 /* Double+PriceFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				495CA352215201360012C46B /* UIViewController+SafeAreaSpacers.swift in Sources */,
 				4914CFBB215769C000B48602 /* ColorAndIconShowViewController.swift in Sources */,
 				495CA34A2151F8EA0012C46B /* SubscriptionTableViewCell.swift in Sources */,
+				491CD78F217D5F8900B81C12 /* Double+PriceFormatter.swift in Sources */,
 				495CA3642153E3F00012C46B /* PulleyManager.swift in Sources */,
 				495CA34E2151FC060012C46B /* AddSubListViewController.swift in Sources */,
 				495CA3312151F17B0012C46B /* AppDelegate.swift in Sources */,
