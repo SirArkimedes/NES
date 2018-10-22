@@ -27,7 +27,11 @@ class NewSubscriptionViewController: UIViewController {
     @IBOutlet weak var moreColorsButton: UIButton!
 
     @IBOutlet weak var costTextField: UITextField!
-    
+
+    @IBOutlet weak var occurenceChoiceLabel: UILabel!
+    @IBOutlet weak var occurencePicker: UIPickerView!
+    @IBOutlet weak var occurencePickerHeight: NSLayoutConstraint!
+
     private var chosenSubColor: SubDefaultColors = .white {
         didSet {
             UIView.animate(withDuration: 0.25) {
@@ -79,6 +83,11 @@ class NewSubscriptionViewController: UIViewController {
         costTextField.backgroundColor = .clear
         costTextField.delegate = self
 
+        occurenceChoiceLabel.text = "Every 1 month"
+        occurencePicker.delegate = self
+        occurencePicker.dataSource = self
+        occurencePickerHeight.constant = 0.0
+
         setColors()
     }
 
@@ -124,6 +133,13 @@ class NewSubscriptionViewController: UIViewController {
     
     @IBAction func moreColorsButtonPressed(_ sender: UIButton) {
         openColorSelector(for: .color)
+    }
+
+    @IBAction func occurenceButtonPressed(_ sender: UIButton) {
+        occurencePickerHeight.constant = 182.0
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
     }
 
     // MARK: - Helpers
@@ -205,5 +221,50 @@ extension NewSubscriptionViewController: ColorSelectorViewControllerDelegate {
     func didSelect(emoji: String) {
         iconLabel.text = ""
         emojiLabel.text = emoji
+    }
+}
+
+extension NewSubscriptionViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 1 {
+            return 3
+        }
+
+        return 30
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 1 {
+            switch row {
+            case 1:
+                return "Year(s)"
+            case 2:
+                return "Day(s)"
+            default:
+                return "Month(s)"
+            }
+        }
+
+        return "\(row + 1)"
+    }
+}
+
+extension NewSubscriptionViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        var builder = "Every \(pickerView.selectedRow(inComponent: 0) + 1) "
+        switch pickerView.selectedRow(inComponent: 1) {
+        case 1:
+            builder += "year"
+        case 2:
+            builder += "day"
+        default:
+            builder += "month"
+        }
+
+        occurenceChoiceLabel.text = pickerView.selectedRow(inComponent: 0) == 0 ? builder : "\(builder)s"
     }
 }
