@@ -110,6 +110,9 @@ class NewSubscriptionViewController: UIViewController {
             new.occurencePeriod = occurencePicker.selectedRow(inComponent: 0) + 1
             new.occurenceCycle = OccurenceCycle(rawValue: occurencePicker.selectedRow(inComponent: 1))!
 
+            if let description = descriptionTextField.text {
+                new.descriptionText = description
+            }
             if let emoji = emojiLabel.text {
                 new.emojiIcon = emoji
             }
