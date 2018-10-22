@@ -34,6 +34,21 @@ class SubscriptionManager {
         return subscriptions[index]
     }
 
+    func getMonthlyCost() -> Double {
+        var cost = 0.0
+        for sub in subscriptions {
+            switch sub.occurenceCycle {
+            case .year:
+                cost += sub.cost / (12.0 * Double(sub.occurencePeriod))
+            case .month:
+                cost += sub.cost / Double(sub.occurencePeriod)
+            case .day:
+                cost += sub.cost * (30 / Double(sub.occurencePeriod))
+            }
+        }
+        return cost
+    }
+
     func bind(with block: @escaping DidGetNewDataBlock) {
         let realm = try! Realm()
         let subscriptions = realm.objects(Subscription.self)

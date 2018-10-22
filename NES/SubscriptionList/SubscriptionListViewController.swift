@@ -59,7 +59,7 @@ class SubscriptionListViewController: UIViewController {
     private func updateTotal() {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        let costFormatted = formatter.string(from: 1.0 as NSNumber)
+        let costFormatted = formatter.string(from: SubscriptionManager.instance.getMonthlyCost() as NSNumber)
         totalCostLabel.text = costFormatted
     }
 
