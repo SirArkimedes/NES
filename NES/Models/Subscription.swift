@@ -126,8 +126,19 @@ class Subscription: Object {
     @objc dynamic var colorGreen = 255
     @objc dynamic var colorBlue = 255
 
+    @objc dynamic var occurencePeriod = 0
+    @objc private dynamic var privateOccurenceCycle = OccurenceCycle.month.rawValue
+    var occurenceCycle: OccurenceCycle {
+        get { return OccurenceCycle(rawValue: privateOccurenceCycle)! }
+        set { privateOccurenceCycle = newValue.rawValue }
+    }
+
     override class func primaryKey() -> String? {
         return "id"
+    }
+
+    override class func ignoredProperties() -> [String] {
+        return ["occurenceCycle"]
     }
 }
 

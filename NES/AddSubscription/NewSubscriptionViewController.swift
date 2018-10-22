@@ -101,6 +101,8 @@ class NewSubscriptionViewController: UIViewController {
             new.colorRed = chosenSubColor.getRed()
             new.colorGreen = chosenSubColor.getGreen()
             new.colorBlue = chosenSubColor.getBlue()
+            new.occurencePeriod = occurencePicker.selectedRow(inComponent: 0) + 1
+            new.occurenceCycle = OccurenceCycle(rawValue: occurencePicker.selectedRow(inComponent: 1))!
 
             if let emoji = emojiLabel.text {
                 new.emojiIcon = emoji
